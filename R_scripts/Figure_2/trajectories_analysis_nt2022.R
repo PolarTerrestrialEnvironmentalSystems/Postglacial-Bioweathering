@@ -109,6 +109,7 @@ anova.cca(rda(bacteria2, veg.pca.site, time2)) #Pr(>F) 0.022 *
 anova.cca(rda(bacteria2, time2, temp_input)) #Pr(>F) 0.46
 
 library(venneuler)
+# gives error does not produce figure.
 bact_varpar <- plot(venneuler(bact_vp,
                               Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
                               bg = c("seagreen3", "mediumpurple", "red", "orange"), alpha = 80, # colour the circles
