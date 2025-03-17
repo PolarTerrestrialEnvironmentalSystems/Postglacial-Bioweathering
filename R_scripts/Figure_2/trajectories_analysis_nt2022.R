@@ -6,7 +6,7 @@ library(BiodiversityR)
 library(ppcor)
 library(ggplot2)
 library(graphics)
-#install.packages("VennDiagram")   # Install & load VennDiagram package
+install.packages("VennDiagram")   # Install & load VennDiagram package
 library("VennDiagram")
 
 vegetation <- read.delim("2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
@@ -54,6 +54,7 @@ temp_input <- temp_final[,-1]
 
 veg.pca <- rda(sqrt(sqrt(vegetation2)))
 
+library(BiodiversityR)
 PCAsignificance(veg.pca, axes = 8) ##first two pc-axis are important
 
 veg.pca.site1 = as.data.frame(veg.pca$CA$u)[,1]
@@ -92,7 +93,7 @@ fungi_varpar <- plot(fungi_vp,
                      bty = "n",
                      pty = "m")
 
-ggsave("2023-03-08_fungi_var_par_withTime_vegeMerged.svg", width = 10, height = 10)
+ggsave("2023-03-08_fungi_var_par_withTime_vegeMerged2.svg", width = 10, height = 10)
 
 #####bacteria
 ###bacteria vege merged
@@ -107,11 +108,12 @@ anova.cca(rda(bacteria2, veg.pca.site, temp_input)) #Pr(>F) 0.005 **
 anova.cca(rda(bacteria2, veg.pca.site, time2)) #Pr(>F) 0.022 * 
 anova.cca(rda(bacteria2, time2, temp_input)) #Pr(>F) 0.46
 
+library(venneuler)
 bact_varpar <- plot(venneuler(bact_vp,
-                    Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
-                    bg = c("seagreen3", "mediumpurple", "red", "orange"), alpha = 80, # colour the circles
-                    digits = 2, # only show 2 digits
-                    cex = 1.5))
+                              Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
+                              bg = c("seagreen3", "mediumpurple", "red", "orange"), alpha = 80, # colour the circles
+                              digits = 2, # only show 2 digits
+                              cex = 1.5))
 
 svg("2023-03-08_bacteria_var_par_withTime_vegeMerged.svg", bact_varpar, width = 15, height = 10, pointsize = 8)
 plot(bact_varpar)
