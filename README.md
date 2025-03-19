@@ -1,4 +1,4 @@
-# Postglacial-Bioweathering
+# Postglacial bioweathering, soil nutrient cycling, and podzolization from palaeometagenomics of plants, fungi, and bacteria
 
 This repository contains the R script and Figures for the manuscript: von Hippel, B, Stoof-Leichsenring, K. R., Çabuk U., Liu S., Melles M., Herzschuh, U. Postglacial bioweathering, soil nutrient cycling, and podzolization from palaeometagenomics of plants, fungi, and bacteria
 
