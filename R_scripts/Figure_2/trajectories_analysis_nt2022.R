@@ -1,12 +1,12 @@
 #########trajectories analysis
 setwd("R_script/Figure_2")
-
 library(vegan)
 library(BiodiversityR)
 library(ppcor)
 library(ggplot2)
 library(graphics)
-install.packages("VennDiagram")   # Install & load VennDiagram package
+library(venneuler)
+#install.packages("VennDiagram")   # Install & load VennDiagram package
 library("VennDiagram")
 
 vegetation <- read.delim("2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
@@ -25,6 +25,7 @@ temp_age <- merge(temperature, vegetation, by = "sample", all = TRUE)
 y <- temp_age$sample
 tr <- temp_age$tr
 
+
 vegetation2 <- vegetation[,-1]
 rownames(vegetation2) <- vegetation[,1]
 rowsumsnotzero=which(apply(vegetation2,1,sum)>0)
@@ -41,6 +42,7 @@ bacteria2=bacteria2[rowsumsnotzero,colsumsnotzero]
 
 time2 <- time[,-1]
 
+
 ###interpolation of the missing tr values
 library("imputeTS")
 temp_int <- na_interpolation(temp_age)
@@ -54,7 +56,6 @@ temp_input <- temp_final[,-1]
 
 veg.pca <- rda(sqrt(sqrt(vegetation2)))
 
-library(BiodiversityR)
 PCAsignificance(veg.pca, axes = 8) ##first two pc-axis are important
 
 veg.pca.site1 = as.data.frame(veg.pca$CA$u)[,1]
@@ -67,6 +68,8 @@ par(mar=c(4,12,2,2),las=1);barplot(c(pc1veg[1:10],rev(pc1veg)[1:10]), horiz=TRUE
 
 pc2veg=sort(veg.pca$CA$v[,"PC2"])
 par(mar=c(4,12,2,2),las=1);barplot(c(pc2veg[1:10],rev(pc2veg)[1:10]), horiz=TRUE)
+
+
 
 
 ########variation partitioning https://r.qcbs.ca/workshop10/book-en/variation-partitioning.html#variation-partitioning-in-r
@@ -82,6 +85,7 @@ anova.cca(rda(fungi2, veg.pca.site, temp_input)) #Pr(>F) 0.001 ***
 anova.cca(rda(fungi2, veg.pca.site, time2)) #Pr(>F) 0.001 ***
 anova.cca(rda(fungi2, time2, temp_input)) #Pr(>F) 0.049 *
 
+
 # plot the variation partitioning Venn diagram
 fungi_varpar <- plot(fungi_vp,
                      Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
@@ -93,7 +97,8 @@ fungi_varpar <- plot(fungi_vp,
                      bty = "n",
                      pty = "m")
 
-ggsave("2023-03-08_fungi_var_par_withTime_vegeMerged2.svg", width = 10, height = 10)
+ggsave("2023-03-08_fungi_var_par_withTime_vegeMerged.svg", width = 10, height = 10)
+
 
 #####bacteria
 ###bacteria vege merged
@@ -108,8 +113,8 @@ anova.cca(rda(bacteria2, veg.pca.site, temp_input)) #Pr(>F) 0.005 **
 anova.cca(rda(bacteria2, veg.pca.site, time2)) #Pr(>F) 0.022 * 
 anova.cca(rda(bacteria2, time2, temp_input)) #Pr(>F) 0.46
 
-library(venneuler)
-# gives error does not produce figure.
+# plot gives error and does not produce figure.: 
+#Error in venneuler(bact_vp, Xnames = c("Vegetation", "Temperature", "Time"),  : combinations must be either a character vector, a table, a named numeric vector or a character matrix with two columns
 bact_varpar <- plot(venneuler(bact_vp,
                               Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
                               bg = c("seagreen3", "mediumpurple", "red", "orange"), alpha = 80, # colour the circles
