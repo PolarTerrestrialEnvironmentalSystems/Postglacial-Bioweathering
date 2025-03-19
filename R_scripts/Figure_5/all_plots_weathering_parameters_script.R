@@ -295,7 +295,7 @@ K_Ti <- ggplot(data=loess_xrf, aes(y=y/1000, x = (K_loess.fit/Ti_loess.fit))) +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-# that part gives error.
+# the following part gives error.
 ################here all plot are merged.
 #install.packages("grid")
 require(gridExtra)
@@ -320,4 +320,29 @@ all_combined <- grid.draw(rbind(ggplotGrob(K_Ti),
 
 svg(filename = "2023-04-06_all_weathering.svg", width = 8, height = 20)
 print(all_combined)
+dev.off()
+
+
+# fix that part:
+# Convert ggplot objects to gtables
+K_Ti_grob <- ggplotGrob(K_Ti)
+weath_gg_grob <- ggplotGrob(weath_gg)
+nutr_gg_grob <- ggplotGrob(nutr_gg)
+plant_pH_plot_grob <- ggplotGrob(plant_pH_plot)
+fungi_pH_plot_grob <- ggplotGrob(fungi_pH_plot)
+bact_pH_plot_grob <- ggplotGrob(bact_pH_plot)
+
+# Combine grobs vertically
+all_combined <- gtable_rbind(K_Ti_grob, 
+                             weath_gg_grob, 
+                             nutr_gg_grob, 
+                             plant_pH_plot_grob, 
+                             fungi_pH_plot_grob, 
+                             bact_pH_plot_grob)
+
+grid.newpage()
+grid.draw(all_combined)
+
+svg(filename = "2023-04-06_all_weathering2.svg", width = 8, height = 20)
+grid.draw(all_combined)  # Use grid.draw() instead of print()
 dev.off()
