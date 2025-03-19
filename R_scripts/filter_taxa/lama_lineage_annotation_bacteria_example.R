@@ -1,21 +1,20 @@
 ###lama refseq shotgun plotting
-setwd("...")
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 
-apmg <- read.delim("Lama_APMG_nt2022_0.8.txt", header = FALSE)
+apmg <- read.delim("out.kraken/Lama_APMG_nt2022_0.8.txt", header = FALSE)
 names(apmg) <- c("samples", "percentage", "CladeCount", "TaxCount", "Rank", "taxID", "Name")
 
-bhv <- read.delim("Lama_BHV_nt2022_0.8.txt", header = FALSE)
+bhv <- read.delim("out.kraken/Lama_BHV_nt2022_0.8.txt", header = FALSE)
 names(bhv) <- c("samples", "percentage", "CladeCount", "TaxCount", "Rank", "taxID", "Name")
 
-reseq <- read.delim("Lama_resequenced_nt2022_0.8.txt", header = FALSE)
+reseq <- read.delim("out.kraken/Lama_resequenced_nt2022_0.8.txt", header = FALSE)
 names(reseq) <- c("samples", "percentage", "CladeCount", "TaxCount", "Rank", "taxID", "Name")
 
-apmg_lin <- read.delim2("lineage_lama_apmg3738_nt_0.8.csv", sep = ",", header = TRUE)
-bhv_lin <- read.delim2("lineage_lama_bhv1_nt_0.8.csv", sep = ",", header = TRUE)
-reseq_lin <- read.delim2("lineage_lama_bhv2_nt_0.8.csv", sep = ",", header = TRUE)
+apmg_lin <- read.delim2("out.kraken/lineage_lama_apmg3738_nt_0.8.csv", sep = ",", header = TRUE)
+bhv_lin <- read.delim2("out.kraken/lineage_lama_bhv1_nt_0.8.csv", sep = ",", header = TRUE)
+reseq_lin <- read.delim2("out.kraken/lineage_lama_bhv2_nt_0.8.csv", sep = ",", header = TRUE)
 
 
 ###memory groesse reicht nicht, deshalb muss das limit angehoben werden
