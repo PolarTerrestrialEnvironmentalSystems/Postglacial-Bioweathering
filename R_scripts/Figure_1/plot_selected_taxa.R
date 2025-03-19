@@ -139,6 +139,9 @@ my_taxa_order=c(unique(plant_all_selected_input$Name_clean), unique(fungi_all_se
 my_taxa_order2 = all_selected_gg_order$order_new
 
 all_selected_gg$my_taxa_order = factor(all_selected_gg$Name_clean, levels=my_taxa_order)
+
+#added new line (144) because this should be unique !
+my_taxa_order2 = unique(all_selected_gg_order$order_new)
 all_selected_gg_order$my_taxa_order_new = factor(all_selected_gg_order$Name_clean, levels=my_taxa_order2)
 
 all_selected_gg_order <- arrange(all_selected_gg_order, order_new)
