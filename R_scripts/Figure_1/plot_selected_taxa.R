@@ -11,7 +11,7 @@ library(tidypaleo)
 #######
 ################
 ###trial mit geresampled
-fungi_resampl <- read.delim("Figure_2/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
+fungi_resampl <- read.delim("Resampling/Output/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 long.convert_fungi_res <- fungi_resampl %>% # convert into parameter-long form
   gather(-X, key = Name, value = percentage) %>%
@@ -43,7 +43,7 @@ long_fungi_res_gg <- long_fungi_res_gg %>%
 #######
 ################
 ###trial mit geresampled
-bact_resampl <- read.delim("Figure_2/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+bact_resampl <- read.delim("Resampling/Output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 long.convert_bact_res <- bact_resampl %>% # convert into parameter-long form
   gather(-X, key = Name, value = percentage) %>%
@@ -86,7 +86,7 @@ long_bact_res_gg <- long_bact_res_gg %>%
   summarise(merged_percent = (sum(real_percent)))
 
 ##########plants resampled
-plant_resampl <- read.delim("Figure_2/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
+plant_resampl <- read.delim("Resampling/Output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 long.convert_plant_res <- plant_resampl %>% # convert into parameter-long form
   gather(-X, key = Name, value = percentage) %>%
