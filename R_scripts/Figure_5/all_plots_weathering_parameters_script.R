@@ -1,4 +1,4 @@
-###lama shotgun plotting
+### lama shotgun plotting
 setwd("Figure V")
 library(dplyr)
 library(tidyr)
@@ -7,8 +7,8 @@ library(ggplot2)
 library(RColorBrewer)
 library(tidypaleo)
 
-###########
-###trial mit geresampled
+
+### load fungi data
 fungi_resampl <- read.delim("2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 long.convert_fungi_res <- fungi_resampl %>% # convert into parameter-long form
@@ -18,19 +18,19 @@ long.convert_fungi_res <- fungi_resampl %>% # convert into parameter-long form
 long_fungi_res <- arrange(long.convert_fungi_res, desc(percentage)) # sort the taxa by relative abundance
 long_fungi_res$taxa <- factor(long_fungi_res$Name, levels = unique(long_fungi_res$Name)) # force the taxa order
 
-####split the assigned name into three columns
+### split the assigned name into three columns
 long_fungi_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_fungi_res$Name, '_', 3)
 long_fungi_res$real_percent <- (long_fungi_res$percentage)/275*100 ###real percentage is count/resampling count*100
 
-##### nur lichen und mycos
-######extract only the mentioned fungi
+
+### extract only the selected fungi
 long_fungi_weath_gg <- long_fungi_res %>%
   filter(stringr::str_detect(assignment, "lichen|mycorrhizae"))
 
 long_fungi_weath_gg$age <- as.numeric(long_fungi_weath_gg$X) / 1000 # show age as ka
 max.age <- round(max(long_fungi_weath_gg$age)) # check the oldest age and adjust the y axis in the plot
 
-###merge genera together
+### merge genera together
 long_fungi_weath_gg$Name_clean <- gsub("\\..*", "", long_fungi_weath_gg$Name)        # Apply gsub with \\
 long_fungi_weath_gg <- long_fungi_weath_gg %>%
   group_by(assignment, age) %>%
@@ -48,7 +48,7 @@ weath_gg <- ggplot(long_fungi_weath_gg, aes(x = merged_percent, y = age), fill =
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-###delete those with pH "out" or rename
+### delete those with pH "out" or rename
 fungi_pH_clean_res <- long_fungi_res[!(long_fungi_res$real_5 == "out" | long_fungi_res$real_5 == "pH tolerant" | long_fungi_res$real_5 == "unknown"),]
 
 fungi_pH_gg_res <- fungi_pH_clean_res %>%
@@ -65,14 +65,10 @@ fungi_pH_gg_res$X <- as.numeric(fungi_pH_gg_res$X) / 1000 # show age as ka
 
 fungi_pH_gg_res$levels <- ordered(fungi_pH_gg_res$real_5, levels=c(5, 4, 3, 2, 1))
 
-
-###
-##ph only alkaline and acidic
+### ph only alkaline and acidic
 fungi_pH_gg_res$real_5 <- stringr::str_replace_all(fungi_pH_gg_res$real_5,"5", "4")# symbiosis to PGPB
 fungi_pH_gg_res$levels <- stringr::str_replace_all(fungi_pH_gg_res$levels,"5", "4")# symbiosis to PGPB
-
 fungi_pH_gg_res_acAl <- fungi_pH_gg_res[!(fungi_pH_gg_res$real_5 == "2" | fungi_pH_gg_res$real_5 == "3"),]
-
 fungi_pH_gg_res_acAl <- fungi_pH_gg_res_acAl[,-4]
 
 fungi_pH_gg_res_acAl <- fungi_pH_gg_res_acAl %>%
@@ -91,11 +87,7 @@ fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill 
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-
-################
-#######
-################
-###trial mit geresampled bacteria
+### Load bacterial data
 bact_resampl <- read.delim("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 long.convert_bact_res <- bact_resampl %>% # convert into parameter-long form
@@ -105,11 +97,11 @@ long.convert_bact_res <- bact_resampl %>% # convert into parameter-long form
 long_bact_res <- arrange(long.convert_bact_res, desc(percentage)) # sort the taxa by relative abundance
 long_bact_res$taxa <- factor(long_bact_res$Name, levels = unique(long_bact_res$Name)) # force the taxa order
 
-####split the assigned name into three columns
+### split the assigned name into three columns
 long_bact_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_bact_res$Name, '_', 3)
 long_bact_res$real_percent <- (long_bact_res$percentage)/24285*100 ###real percentage is count/resampling count*100
 
-#rename some of the initial assignments to narrow them down
+### rename some of the initial assignments to narrow them down
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"As..Sb", "As") ##As, Sb to As
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"S..As", "As") ##S, As to As
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Au", "metalls") ##Au to metalls
@@ -123,9 +115,7 @@ long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mo", "C")# symbiosis to PGPB
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..C", "C")# symbiosis to PGPB
 
-
-
-###delete those with pH "out" or rename
+### delete those with pH "out" or rename
 bact_pH_clean_res <- long_bact_res[!(long_bact_res$real_5 == "out" | long_bact_res$real_5 == "" | long_bact_res$real_5 == "unknown"),]
 
 bact_pH_gg_res <- bact_pH_clean_res %>%
@@ -141,13 +131,11 @@ bact_pH_gg_res$X <- as.numeric(bact_pH_gg_res$X) / 1000 # show age as ka
 
 bact_pH_gg_res$levels <- ordered(bact_pH_gg_res$real_5, levels=c(5,4,3,2,1))
 
-###
-##ph only alkaline and acidic
+
+### pH only alkaline and acidic
 bact_pH_gg_res$real_5 <- stringr::str_replace_all(bact_pH_gg_res$real_5,"5", "4")# symbiosis to PGPB
 bact_pH_gg_res$levels <- stringr::str_replace_all(bact_pH_gg_res$levels,"5", "4")# symbiosis to PGPB
-
 bact_pH_gg_res_acAl <- bact_pH_gg_res[!(bact_pH_gg_res$real_5 == "2" | bact_pH_gg_res$real_5 == "3"),]
-
 bact_pH_gg_res_acAl <- bact_pH_gg_res_acAl[,-4]
 
 bact_pH_gg_res_acAl <- bact_pH_gg_res_acAl %>%
@@ -166,12 +154,12 @@ bact_pH_plot <- ggplot(bact_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill = 
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-###nutrient cyclers
+### nutrient cyclers
 bact_nutr <- long_bact_res[!(long_bact_res$assignment == "As" | long_bact_res$assignment == "Fe" | long_bact_res$assignment == "unknown" |
                                long_bact_res$assignment == "lichen" | long_bact_res$assignment == "metalls" | long_bact_res$assignment == "PGPB" 
 ),]
 
-####merge further the assignments
+### merge further the assignments
 bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..Fe", "C")# symbiosis to PGPB
 bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..halogene", "C")# symbiosis to PGPBz
 bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..Mo", "C")# symbiosis to PGPB
@@ -211,7 +199,7 @@ nutr_gg <- ggplot(nutr_gg_res_plot, aes(x = ecol_percent, y = X, fill = assignme
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
 
-##########plants resampled
+### load plant data 
 plant_resampl <- read.delim("2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 long.convert_plant_res <- plant_resampl %>% # convert into parameter-long form
@@ -221,11 +209,11 @@ long.convert_plant_res <- plant_resampl %>% # convert into parameter-long form
 long_plant_res <- arrange(long.convert_plant_res, desc(percentage)) # sort the taxa by relative abundance
 long_plant_res$taxa <- factor(long_plant_res$Name, levels = unique(long_plant_res$Name)) # force the taxa order
 
-####split the assigned name into three columns
+### split the assigned name into three columns
 long_plant_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_plant_res$Name, '_', 3)
 long_plant_res$real_percent <- (long_plant_res$percentage)/3533*100 ###real percentage is count/resampling count*100
 
-###delete those with pH "out" or rename
+### delete those with pH "out" or rename
 plant_pH_clean_res <- long_plant_res[!(long_plant_res$real_5 == "out" | long_plant_res$real_5 == "" | long_plant_res$real_5 == "unknown"
                                        | long_plant_res$real_5 == "pH.tolerant"),]
 
@@ -242,7 +230,7 @@ plant_pH_gg_res$X <- as.numeric(plant_pH_gg_res$X) / 1000 # show age as ka
 
 plant_pH_gg_res$levels <- ordered(plant_pH_gg_res$real_5, levels=c(5,4,3,2,1))
 
-##ph only alkaline and acidic
+### ph only alkaline and acidic
 plant_pH_gg_res$real_5 <- stringr::str_replace_all(plant_pH_gg_res$real_5,"5", "4")# symbiosis to PGPB
 plant_pH_gg_res$levels <- stringr::str_replace_all(plant_pH_gg_res$levels,"5", "4")# symbiosis to PGPB
 
@@ -266,12 +254,12 @@ plant_pH_plot <- ggplot(plant_pH_clean_res_acAl, aes(x = ecol_percent, y = X, fi
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-#############merge all selected assignments and import xrf
+### merge all selected assignments and import xrf
 xrf_new <- read.delim("2022-08-15_xrf_for_smoothing.csv", sep=";")
 age <- read.delim("PG1341_woody_seg6_minus145cm_boundary_168_ages.txt", sep="\t",  header=TRUE, stringsAsFactors=FALSE, dec=",")
 
-xrf_age <- merge(xrf_new, age, by = "depth") ###combine age and xrf_clean data
-y <- xrf_age$mean ####smoothing of all values 
+xrf_age <- merge(xrf_new, age, by = "depth") ### combine age and xrf_clean data
+y <- xrf_age$mean ### smoothing of all values 
 
 K_l <- xrf_age$K
 Ti_l <- xrf_age$Ti
@@ -280,8 +268,8 @@ K_loess <- predict(loess(y ~ K_l, xrf_age, span = 0.75), se = T)
 Ti_loess <- predict(loess(y ~ Ti_l, xrf_age, span = 0.75), se = T)
 
 loess_xrf <- data.frame(y, K_loess$fit, Ti_loess$fit)
-loess_xrf <- loess_xrf[!(loess_xrf$y=="-47"),] ###drop all values without an age
-loess_xrf <- loess_xrf[!(loess_xrf$y=="-7"),] ###drop all values without an age
+loess_xrf <- loess_xrf[!(loess_xrf$y=="-47"),] 
+loess_xrf <- loess_xrf[!(loess_xrf$y=="-7"),] 
 loess_xrf$facet <- "weathering"
 
 K_Ti <- ggplot(data=loess_xrf, aes(y=y/1000, x = (K_loess.fit/Ti_loess.fit))) +
@@ -296,7 +284,8 @@ K_Ti <- ggplot(data=loess_xrf, aes(y=y/1000, x = (K_loess.fit/Ti_loess.fit))) +
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
 # the following part gives error.
-################here all plot are merged.
+
+### here all plot are merged
 #install.packages("grid")
 require(gridExtra)
 library(grid)
