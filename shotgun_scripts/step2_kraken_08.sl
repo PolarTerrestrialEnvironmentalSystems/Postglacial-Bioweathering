@@ -1,5 +1,4 @@
 #!/bin/bash
-#SBATCH --account=envi.envi
 #SBATCH --job-name=step2nt
 #SBATCH --partition=fat
 #SBATCH --time=20:00:00
