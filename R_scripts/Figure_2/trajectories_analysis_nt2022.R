@@ -1,13 +1,13 @@
-#########trajectories analysis
-setwd("R_script/Figure_2")
+### trajectories analysis
 library(vegan)
 library(BiodiversityR)
 library(ppcor)
 library(ggplot2)
 library(graphics)
 library(venneuler)
-#install.packages("VennDiagram")   # Install & load VennDiagram package
-library("VennDiagram")
+library(VennDiagram)
+library(imputeTS)
+setwd("Figure_2")
 
 vegetation <- read.delim("2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
 fungi <- read.delim("2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
@@ -15,16 +15,15 @@ bacteria <- read.delim("2023-03-08_bacteria_clean_occ3_median_resampled_resample
 temperature <- read.delim("tagg_temperatures_paleo.csv", sep = ";", dec = ",")
 time <- read.delim("time_variable.txt", sep = "\t")
 
-########
-# the temperature needs the same format as the other variables
-names(vegetation)[1] <- "sample" ##rename first column of vegetation
-names(fungi)[1] <- "sample" ##rename first column of fungi
-names(bacteria)[1] <- "sample" ##rename first column of bacteria
+### the temperature needs the same format as the other variables
+### rename first columns
+names(vegetation)[1] <- "sample" 
+names(fungi)[1] <- "sample"
+names(bacteria)[1] <- "sample"
 
 temp_age <- merge(temperature, vegetation, by = "sample", all = TRUE) 
 y <- temp_age$sample
 tr <- temp_age$tr
-
 
 vegetation2 <- vegetation[,-1]
 rownames(vegetation2) <- vegetation[,1]
@@ -42,9 +41,7 @@ bacteria2=bacteria2[rowsumsnotzero,colsumsnotzero]
 
 time2 <- time[,-1]
 
-
-###interpolation of the missing tr values
-library("imputeTS")
+### interpolation of the missing tr values
 temp_int <- na_interpolation(temp_age)
 
 temp_final <- merge(temp_int, bacteria, all.y = TRUE)
@@ -52,7 +49,6 @@ temp_final <- temp_final[,-c(3:1421)]
 
 rownames(temp_final) <- temp_final[,1]
 temp_input <- temp_final[,-1]
-
 
 veg.pca <- rda(sqrt(sqrt(vegetation2)))
 
@@ -69,24 +65,21 @@ par(mar=c(4,12,2,2),las=1);barplot(c(pc1veg[1:10],rev(pc1veg)[1:10]), horiz=TRUE
 pc2veg=sort(veg.pca$CA$v[,"PC2"])
 par(mar=c(4,12,2,2),las=1);barplot(c(pc2veg[1:10],rev(pc2veg)[1:10]), horiz=TRUE)
 
-
-
-
-########variation partitioning https://r.qcbs.ca/workshop10/book-en/variation-partitioning.html#variation-partitioning-in-r
-##fungi with vegetation , temperature variation and time
+### variation partitioning https://r.qcbs.ca/workshop10/book-en/variation-partitioning.html#variation-partitioning-in-r
+### fungi with vegetation , temperature variation and time
 fungi_vp <- varpart(sqrt(sqrt(fungi2)), veg.pca.site, temp_input, time2)
 fungi_vp$part ###access results: Total variation (SS): 838.14, Variance: 19.492
 
-###significance of the variables
-anova.cca(rda(fungi2, veg.pca.site)) #Pr(>F) 0.001 ***
-anova.cca(rda(fungi2, time2)) #Pr(>F) 0.001 ***
-anova.cca(rda(fungi2, temp_input)) #Pr(>F) 0.001 ***
-anova.cca(rda(fungi2, veg.pca.site, temp_input)) #Pr(>F) 0.001 *** 
-anova.cca(rda(fungi2, veg.pca.site, time2)) #Pr(>F) 0.001 ***
-anova.cca(rda(fungi2, time2, temp_input)) #Pr(>F) 0.049 *
+### significance of the variables
+anova.cca(rda(fungi2, veg.pca.site))
+anova.cca(rda(fungi2, time2))
+anova.cca(rda(fungi2, temp_input))
+anova.cca(rda(fungi2, veg.pca.site, temp_input))
+anova.cca(rda(fungi2, veg.pca.site, time2))
+anova.cca(rda(fungi2, time2, temp_input))
 
 
-# plot the variation partitioning Venn diagram
+### plot the variation partitioning Venn diagram
 fungi_varpar <- plot(fungi_vp,
                      Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
                      bg = c("seagreen3", "yellow", "blue", "orange"), 
@@ -96,31 +89,29 @@ fungi_varpar <- plot(fungi_vp,
                      lty = 1,
                      bty = "n",
                      pty = "m")
+### print the plot
+print(fungi_varpar)
 
-ggsave("2023-03-08_fungi_var_par_withTime_vegeMerged.svg", width = 10, height = 10)
-
-
-#####bacteria
-###bacteria vege merged
+### bacteria
 bact_vp <- varpart(sqrt(sqrt(bacteria2)), veg.pca.site, temp_input, time2)
 bact_vp$part ###access results: Total variation (SS): 1181.5, Variance: 27.476
 
-###significance
-anova.cca(rda(bacteria2, veg.pca.site)) #Pr(>F) 0.002 **
-anova.cca(rda(bacteria2, time2)) #Pr(>F) 0.004 **
-anova.cca(rda(bacteria2, temp_input)) #Pr(>F) 0.001 ***
-anova.cca(rda(bacteria2, veg.pca.site, temp_input)) #Pr(>F) 0.005 **
-anova.cca(rda(bacteria2, veg.pca.site, time2)) #Pr(>F) 0.022 * 
-anova.cca(rda(bacteria2, time2, temp_input)) #Pr(>F) 0.46
+### significance
+anova.cca(rda(bacteria2, veg.pca.site))
+anova.cca(rda(bacteria2, time2))
+anova.cca(rda(bacteria2, temp_input))
+anova.cca(rda(bacteria2, veg.pca.site, temp_input))
+anova.cca(rda(bacteria2, veg.pca.site, time2))
+anova.cca(rda(bacteria2, time2, temp_input))
 
-# plot gives error and does not produce figure.: 
-#Error in venneuler(bact_vp, Xnames = c("Vegetation", "Temperature", "Time"),  : combinations must be either a character vector, a table, a named numeric vector or a character matrix with two columns
-bact_varpar <- plot(venneuler(bact_vp,
-                              Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
-                              bg = c("seagreen3", "mediumpurple", "red", "orange"), alpha = 80, # colour the circles
-                              digits = 2, # only show 2 digits
-                              cex = 1.5))
+bact_varpar <- plot(bact_vp,
+                     Xnames = c("Vegetation", "Temperature", "Time"), # name the partitions
+                     bg = c("seagreen3", "mediumpurple", "red", "orange"), alpha = 80, # colour the circles
+                     digits = 2, # only show 2 digits
+                     cex = 1.5,
+                     lty = 1,
+                     bty = "n",
+                     pty = "m")
 
-svg("2023-03-08_bacteria_var_par_withTime_vegeMerged.svg", bact_varpar, width = 15, height = 10, pointsize = 8)
-plot(bact_varpar)
-dev.off()
+### print the plot
+print(bact_varpar)
