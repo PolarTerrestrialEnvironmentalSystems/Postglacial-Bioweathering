@@ -2,7 +2,7 @@ library(tidyverse)
 options(stringsAsFactors=FALSE)
 
 ### select main folder containing folders named exactly "data"
-setwd("Resampling")
+setwd("~/Postglacial-Bioweathering-main/R_scripts/Resampling/02_resampling")
 
 rm(list=ls())
 
