@@ -1,5 +1,4 @@
 ### lama shotgun plotting
-setwd("Figure V")
 library(dplyr)
 library(tidyr)
 library(stringr)
@@ -9,6 +8,8 @@ library(tidypaleo)
 require(gridExtra)
 library(grid)
 library(gtable)
+
+setwd("~/Postglacial-Bioweathering-main/R_scripts/Figure_5")
 
 ### load fungi data
 fungi_resampl <- read.delim("2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
