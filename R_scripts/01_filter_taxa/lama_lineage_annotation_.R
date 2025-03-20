@@ -17,7 +17,7 @@ apmg_lin <- read.delim2("out.kraken/lineage_lama_apmg3738_nt_0.8.csv", sep = ","
 bhv_lin <- read.delim2("out.kraken/lineage_lama_bhv1_nt_0.8.csv", sep = ",", header = TRUE)
 reseq_lin <- read.delim2("out.kraken/lineage_lama_bhv2_nt_0.8.csv", sep = ",", header = TRUE)
 
-### memory groesse reicht nicht, deshalb muss das limit angehoben werden
+### set to memory limit
 memory.limit(size=56000)
 
 apmg.lineage <- plyr::join(apmg, apmg_lin, by = "taxID")
@@ -27,8 +27,9 @@ reseq.lineage <- plyr::join(reseq, reseq_lin, by = "taxID")
 ### load metadata containing sample name, age and depth
 metadata_apmg <- openxlsx::read.xlsx(xlsxFile = "APMG3738_Lama_all_shotgun_sample_name_change.xlsx")
 metadata_bhv <- openxlsx::read.xlsx(xlsxFile = "BHV1_shotgun_sample_name_change.xlsx")
-metadata_apmg$samples %in% apmg$samples # check if there are any missing samples
-metadata_bhv$samples %in% bhv$samples # check if there are any missing samples
+
+metadata_apmg$samples %in% apmg$samples 
+metadata_bhv$samples %in% bhv$samples
 
 metadata_reseq <- openxlsx::read.xlsx(xlsxFile = "BHV2_shotgun_sample_name_change.xlsx")
 
