@@ -1,57 +1,74 @@
 library(tidyverse)
 options(stringsAsFactors=FALSE)
-setwd("Resampling/")# select main folder containing folders named exactly "data" and "output"
+
+### select main folder containing folders named exactly "data"
+setwd("Resampling")
 
 rm(list=ls())
-specseq=read.delim("resampling_plants_nt2022_occ3_input.csv", header = TRUE, sep = ";")# data table was exported from xlsx here csv2: sep=";", dec=","
-str(specseq)# check data is of required format, count data as integer/double, taxa names as strings
-specseq[is.na(specseq)]=0# make sure additional rows or NA values are converted to zeros
 
-t_specseq <- as.data.frame(t(specseq), header = F) ##dataframe muss noch umgedreht werden
-names(t_specseq) <- t_specseq[1,] ##jetzt noch header machen
-t_specseq <- t_specseq[-1,] ###jetzt doppelte altersinfo entfernen
+### data table was exported from xlsx here csv2: sep=";", dec=","
+specseq=read.delim("resampling_plants_nt2022_occ3_input.csv", header = TRUE, sep = ";")
+### check data is of required format, count data as integer/double, taxa names as strings
+str(specseq)
+### make sure additional rows or NA values are converted to zero
+specseq[is.na(specseq)]=0
+
+### dataframe still needs to transformed
+t_specseq <- as.data.frame(t(specseq), header = F) 
+names(t_specseq) <- t_specseq[1,]
+t_specseq <- t_specseq[-1,]
 t_specseq$name <- row.names(t_specseq)
 t_specseq <- t_specseq %>%
-  select(name, everything())#alter soll erste column sein
+  select(name, everything())
 
-# define columns that contain raw count data
+### define columns that contain raw count data
 names(t_specseq)
 colstart=2
 colend=45
-names(t_specseq)[colstart:colend]# check
+names(t_specseq)[colstart:colend]
 COLUMNNAMESAREYEARS=TRUE
 
-####get mean and median counts
+### get mean and median counts
 sample_counts <- colSums(t_specseq[colstart:colend])
-mean_counts <- mean(sample_counts) # 5853.5
-median_counts <- median(sample_counts) # 3533
+### 5853.5         
+mean_counts <- mean(sample_counts)
+### 3533
+median_counts <- median(sample_counts)
 
-# species must have unique sample names and need to be merged with the family (for technical reasons)
-SPECIESNAMECOLUMN=1# position of the species assignments column in the data frame
-names(t_specseq)[SPECIESNAMECOLUMN]="scientific_name"# change species name column to "scientific_name"
+### species must have unique sample names and need to be merged with the family (for technical reasons)
+### position of the species assignments column in the data frame
+SPECIESNAMECOLUMN=1
+### change species name column to "scientific_name"
+names(t_specseq)[SPECIESNAMECOLUMN]="scientific_name"
 
 FAMILYNAMEPRESENT=FALSE
-FAMILYNAMECOLUMN=1# position of the family assignments column in the data frame
+### position of the family assignments column in the data frame
+FAMILYNAMECOLUMN=1
 if(FAMILYNAMEPRESENT)
 {
-  names(t_specseq)[FAMILYNAMECOLUMN]="element_cycle"# change family name column to "family_name"
+  ### change family name column to "family_name"
+  names(t_specseq)[FAMILYNAMECOLUMN]="element_cycle"
 } else
 {
   t_specseq$family_name="NoFamilyName"# add empty family name column
 }
 
-specseq_final_name=paste(gsub(" ", "_", t_specseq$family_name), make.unique(t_specseq$scientific_name))# make sure to have individual names for each species/taxa entry
-
-
+### make sure to have individual names for each species/taxa entry
+specseq_final_name=paste(gsub(" ", "_", t_specseq$family_name), make.unique(t_specseq$scientific_name))
 
 
 ### rarification
-# resample loop for each sample/year present in the data table
-nsampleff=3533# determine min. read counts for rarefaction, here automatic procedure to find the minimum within the data set
-resamplingnumber=100# set here the number of resamplings, standard==100
+### resample loop for each sample/year present in the data table
+
+### determine min. read counts for rarefaction, here automatic procedure to find the minimum within the data set
+nsampleff=3533
+### set here the number of resamplings, standard==100
+resamplingnumber=100
 genrare=list()
-yr=NULL# in case of column/sample names are numbers corresponding to depths, an X was given in front of the number on data table import, in the loop this X is deleted and the year is assigned as the name of the entry in the filled loop
-missing=0# this counter is needed to reorganize the list in case samples without any reads are present. These will be skipped (should be not the case otherwise the minimal counts would be zero what will produce in an error so please check before running the script if you have such samples in your data set end exclude them prior analyses).
+### in case of column/sample names are numbers corresponding to depths, an X was given in front of the number on data table import, in the loop this X is deleted and the year is assigned as the name of the entry in the filled loop
+yr=NULL
+### this counter is needed to reorganize the list in case samples without any reads are present. These will be skipped (should be not the case otherwise the minimal counts would be zero what will produce in an error so please check before running the script if you have such samples in your data set end exclude them prior analyses).
+missing=0
 
 for(yrcoli in colstart:colend)
 {
@@ -63,20 +80,24 @@ for(yrcoli in colstart:colend)
   if(length(allspec)>0)
   {
     if(COLUMNNAMESAREYEARS)
-    {# convert to number
+    {
+      ### convert to number
       yr=c(yr, as.numeric(gsub(",", ".", gsub("X","",names(t_specseq)[yrcoli]))))
     } else
-    {# take the name as it is
+    {
+      ### take the name as it is
       yr=c(yr, names(t_specseq)[yrcoli])
     }
     
     sampleeffort=list()
-    for(nsampleeffi in nsampleff)# would also be possible to process many differrent sampling efforts with the same loop e.g. replace here in the loop call nsampleeff by c(nsampleeff, 100, 1000, ...) but then the script needs to be adapted to take them in the analyses into account
+    ### would also be possible to process many differrent sampling efforts with the same loop e.g. replace here in the loop call nsampleeff by c(nsampleeff, 100, 1000, ...) but then the script needs to be adapted to take them in the analyses into account
+    for(nsampleeffi in nsampleff)
     {
       repeatsample=list()
       for(repi in 1:resamplingnumber)
       {
-        repeatsample[[repi]]=sample(allspec,nsampleeffi,replace=TRUE, prob=allspec_counts/sum(allspec_counts))# weighted resampling
+        ### weighted resampling
+        repeatsample[[repi]]=sample(allspec,nsampleeffi,replace=TRUE, prob=allspec_counts/sum(allspec_counts))
       }
       sampleeffort[[which(nsampleff==nsampleeffi)]]=repeatsample
     }
@@ -88,26 +109,25 @@ for(yrcoli in colstart:colend)
 }
 names(genrare)=yr
 
-# how to access the data in a resampled dataset (list called genrare)
-# ... show how many taxa in the first newly generated data set were drawn
+### how to access the data in a resampled dataset (list called genrare)
+### ... show how many taxa in the first newly generated data set were drawn
 length(unique(genrare[[1]][[2]][[1]][[1]]))
-# ... genrare[[1...number of columns]]
-# ... genrare[[1...number of columns]][[1]] == potential unique taxa names in the corresponding sample
-# ... genrare[[1...number of columns]][[2]] == resampled data
-# ... genrare[[1...number of columns]][[2]][[1]] == resampled data of nsampleff, usually only 1 present
-# ... genrare[[1...number of columns]][[2]][[1]][[1:...resamplingnumber]] == resampled data (individual taxa) as determined earlier
+### ... genrare[[1...number of columns]]
+### ... genrare[[1...number of columns]][[1]] == potential unique taxa names in the corresponding sample
+### ... genrare[[1...number of columns]][[2]] == resampled data
+### ... genrare[[1...number of columns]][[2]][[1]] == resampled data of nsampleff, usually only 1 present
+### ... genrare[[1...number of columns]][[2]][[1]][[1:...resamplingnumber]] == resampled data (individual taxa) as determined earlier
 
 
-
-
-
-# processing of the resampled data set
-# count total species/family number and reads of individual families
+### processing of the resampled data set
+### count total species/family number and reads of individual families
 famorig=specseq$family_name
 familylevels=names(rev(sort(table(famorig))))
 
-totspec=NULL# number of species per sample
-totfam=NULL# number of species per family per sample
+### number of species per sample
+totspec=NULL
+### number of species per family per sample
+totfam=NULL
 for(li in 1:length(genrare))
 {
   for(li2 in 1:length(genrare[[li]][[2]]))
@@ -132,25 +152,27 @@ str(totfam)
 
 
 
-# simple plots of the processed data
-# modify column names ifnot years that can be coerced to numbers
+### simple plots of the processed data
+### modify column names ifnot years that can be coerced to numbers
 if(!COLUMNNAMESAREYEARS)
 {
-  totspec$T=factor(totspec$T, levels=names(genrare))# ordered levels to contain original sorting of columns
-  totfam$T=factor(totfam$T, levels=names(genrare))# ordered levels to contain original sorting of columns
+  ### ordered levels to contain original sorting of columns
+  totspec$T=factor(totspec$T, levels=names(genrare))
+  ### ordered levels to contain original sorting of columns
+  totfam$T=factor(totfam$T, levels=names(genrare))
 }
 png(paste0("output/2023-03-06_plants_median_resampled_totalspecies_Sampleeffort",nsampleff,"_plot.png"), width=480,height=480)
 par(mar=c(8,4,3,1),las=2)
 with(totspec,plot(Nspecies~T, main="number of species per sample"))
 dev.off()
 
-# save processed data
+### save processed data
 write.csv2(totspec, paste0("output/2023-03-06_plants_median_resampled_resampled_totalspecies_Sampleeffort",nsampleff,".csv"), row.names=FALSE)	
 write.csv2(totfam, paste0("output/2023-03-06_plants_median_resampled_resampled_totalfamilies_Sampleeffort",nsampleff,".csv"), row.names=FALSE)	
 
 
 
-# aggregate data on species level
+### aggregate data on species level
 famorig=t_specseq$scientific_name
 familylevels=names(rev(sort(table(famorig))))
 
@@ -172,22 +194,15 @@ for(li in 1:length(genrare))
 }
 str(totfam)
 
-# modify column names ifnot years that can be coerced to numbers
+### modify column names ifnot years that can be coerced to numbers
 if(!COLUMNNAMESAREYEARS)
 {
-  totfam$T=factor(totfam$T, levels=names(genrare))# ordered levels to contain original sorting of columns
+  ### ordered levels to contain original sorting of columns
+  totfam$T=factor(totfam$T, levels=names(genrare))
 }
 
 
-
-# fehler ist factor, was im folgenden zu falschen Ts führt
-# lösung nicht als factor sonder zahl machen
-#totfam$T=as.numeric(as.character(totfam$T))
-
-
-
-
-# calculate mean values for each species/taxa
+### calculate mean values for each species/taxa
 speciesfamiliesdf_totfam=NULL
 pdf(paste0("output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated.pdf"))
 par(mar=c(8,4,3,1),las=2)
@@ -213,14 +228,12 @@ dev.off()
 
 str(speciesfamiliesdf_totfam)
 
-# save processed data
+### save processed data
 write.csv2(speciesfamiliesdf_totfam, paste0("output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated.csv"), row.names=FALSE)
 
 
-
-
 ### post processing	
-# reformat for pca input ... rows are samples, cols are species/taxa
+### reformat for pca input ... rows are samples, cols are species/taxa
 ordidf=NULL
 for(fi in levels(factor(speciesfamiliesdf_totfam$Species)))
 {
@@ -230,29 +243,29 @@ for(fi in levels(factor(speciesfamiliesdf_totfam$Species)))
 names(ordidf)[2:dim(ordidf)[2]]=speciesfamiliesdf_totfam[speciesfamiliesdf_totfam$Species==fi, ]$TBP
 str(ordidf)
 
-# remove species/taxa column
+### remove species/taxa column
 row.names(ordidf)=ordidf$Spec
 ordidf=ordidf[,-1]
 str(ordidf)
 head(ordidf)
 
-# exclude samples or species that have no records
+### exclude samples or species that have no records
 rowsumsnotzero=which(apply(ordidf,1,sum)>0)
 colsumsnotzero=which(apply(ordidf,2,sum)>0)
 ordidf=ordidf[rowsumsnotzero,colsumsnotzero]
 
-# export data
+### export data
 write.csv2(t(ordidf), paste0("output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated_pcainput.csv"))
 
-# comparison of original and resampled data set
-# prepare the data
+### comparison of original and resampled data set
+### prepare the data
 ordiorigdf=t_specseq[colstart:colend]
 row.names(ordiorigdf)=make.unique(t_specseq$scientific_name)
 rowsumsnotzero=which(apply(ordiorigdf,1,sum)>0)
 colsumsnotzero=which(apply(ordiorigdf,2,sum)>0)
 ordiorigdf=ordiorigdf[rowsumsnotzero,colsumsnotzero]
 
-# species count (counts >= 1)
+### species count (counts >= 1)
 png(paste0("output/2023-03-06_plants_median_resampled_resampled_speciesnumber_Sampleeffort",nsampleff,"_aggregated_comparisonplot.png"), width=480,height=480)
 par(mar=c(8,4,3,1),las=2)
 barplot(apply(ordiorigdf,2,function(x)length(which(x>=1))), col="tomato", border=FALSE)
@@ -260,7 +273,7 @@ barplot(apply(ordidf,2,function(x)length(which(x>=1))), add=TRUE, col="skyblue",
 legend("topright", c("original","resampled"), col=c("tomato","skyblue"), pch=15, pt.cex=1.5, title="Species number >= 1 count")
 dev.off()
 
-# ordination
+### ordination
 pca_original=prcomp(sqrt(sqrt(t(ordiorigdf))))
 pca_resampled=prcomp(sqrt(sqrt(t(ordidf))))
 
@@ -269,4 +282,3 @@ par(mfrow=c(1,2))
 biplot(pca_original, main="original data")
 biplot(pca_resampled, main="rarefied data")
 dev.off()
-
