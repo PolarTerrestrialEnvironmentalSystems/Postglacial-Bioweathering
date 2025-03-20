@@ -37,18 +37,23 @@ mean_counts <- mean(sample_counts)
 ### 273.5
 median_counts <- median(sample_counts) 
 
-# species must have unique sample names and need to be merged with the family (for technical reasons)
-SPECIESNAMECOLUMN=1# position of the species assignments column in the data frame
-names(t_specseq)[SPECIESNAMECOLUMN]="name"# change species name column to "scientific_name"
+### species must have unique sample names and need to be merged with the family (for technical reasons)
+### position of the species assignments column in the data frame
+SPECIESNAMECOLUMN=1
+
+### change species name column to "scientific_name"
+names(t_specseq)[SPECIESNAMECOLUMN]="name"
 
 FAMILYNAMEPRESENT=FALSE
-FAMILYNAMECOLUMN=1# position of the family assignments column in the data frame
+### position of the family assignments column in the data frame
+FAMILYNAMECOLUMN=1
 if(FAMILYNAMEPRESENT)
 {
   names(t_specseq)[FAMILYNAMECOLUMN]="element_cycle"
 } else
 {
-  t_specseq$family_name="NoFamilyName"# add empty family name column
+  ### add empty family name column
+  t_specseq$family_name="NoFamilyName"
 }
 
 ### make sure to have individual names for each species/taxa entry
