@@ -7,7 +7,8 @@ library(graphics)
 library(venneuler)
 library(VennDiagram)
 library(imputeTS)
-setwd("Figure_2")
+
+setwd("~/Postglacial-Bioweathering-main/R_scripts/Figure_2")
 
 vegetation <- read.delim("2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
 fungi <- read.delim("2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
@@ -65,7 +66,7 @@ par(mar=c(4,12,2,2),las=1);barplot(c(pc1veg[1:10],rev(pc1veg)[1:10]), horiz=TRUE
 pc2veg=sort(veg.pca$CA$v[,"PC2"])
 par(mar=c(4,12,2,2),las=1);barplot(c(pc2veg[1:10],rev(pc2veg)[1:10]), horiz=TRUE)
 
-### variation partitioning https://r.qcbs.ca/workshop10/book-en/variation-partitioning.html#variation-partitioning-in-r
+### variation partitioning https://r.qcbs.ca/workshop10/book-en/variation-partitioning.html
 ### fungi with vegetation , temperature variation and time
 fungi_vp <- varpart(sqrt(sqrt(fungi2)), veg.pca.site, temp_input, time2)
 fungi_vp$part ###access results: Total variation (SS): 838.14, Variance: 19.492
