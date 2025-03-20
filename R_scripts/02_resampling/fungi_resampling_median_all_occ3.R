@@ -2,7 +2,8 @@ library(tidyverse)
 options(stringsAsFactors=FALSE)
 
 ### select main folder containing folders named exactly "data"
-setwd("00_resampling")
+setwd("~/Postglacial-Bioweathering-main/R_scripts/Resampling/02_resampling")
+
 rm(list=ls())
 
 ### data table was exported from xlsx here csv2: sep=";", dec=","
