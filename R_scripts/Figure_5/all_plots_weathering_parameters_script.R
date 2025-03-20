@@ -6,45 +6,52 @@ library(stringr)
 library(ggplot2)
 library(RColorBrewer)
 library(tidypaleo)
-
+require(gridExtra)
+library(grid)
+library(gtable)
 
 ### load fungi data
 fungi_resampl <- read.delim("2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
 
-long.convert_fungi_res <- fungi_resampl %>% # convert into parameter-long form
+### convert into parameter-long form
+long.convert_fungi_res <- fungi_resampl %>% 
   gather(-X, key = Name, value = percentage) %>%
   group_by(X) %>%
   ungroup()
-long_fungi_res <- arrange(long.convert_fungi_res, desc(percentage)) # sort the taxa by relative abundance
-long_fungi_res$taxa <- factor(long_fungi_res$Name, levels = unique(long_fungi_res$Name)) # force the taxa order
+
+### sort the taxa by relative abundance
+long_fungi_res <- arrange(long.convert_fungi_res, desc(percentage))
+### force the taxa order
+long_fungi_res$taxa <- factor(long_fungi_res$Name, levels = unique(long_fungi_res$Name))
 
 ### split the assigned name into three columns
 long_fungi_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_fungi_res$Name, '_', 3)
-long_fungi_res$real_percent <- (long_fungi_res$percentage)/275*100 ###real percentage is count/resampling count*100
+### real percentage is count/resampling count*100
+long_fungi_res$real_percent <- (long_fungi_res$percentage)/275*100 
 
 
 ### extract only the selected fungi
 long_fungi_weath_gg <- long_fungi_res %>%
   filter(stringr::str_detect(assignment, "lichen|mycorrhizae"))
 
-long_fungi_weath_gg$age <- as.numeric(long_fungi_weath_gg$X) / 1000 # show age as ka
-max.age <- round(max(long_fungi_weath_gg$age)) # check the oldest age and adjust the y axis in the plot
+### show age as ka
+long_fungi_weath_gg$age <- as.numeric(long_fungi_weath_gg$X) / 1000
+### check the oldest age and adjust the y axis in the plot
+max.age <- round(max(long_fungi_weath_gg$age)) 
 
 ### merge genera together
-long_fungi_weath_gg$Name_clean <- gsub("\\..*", "", long_fungi_weath_gg$Name)        # Apply gsub with \\
+long_fungi_weath_gg$Name_clean <- gsub("\\..*", "", long_fungi_weath_gg$Name)
 long_fungi_weath_gg <- long_fungi_weath_gg %>%
   group_by(assignment, age) %>%
   summarise(merged_percent = (sum(real_percent)))
 
-
 weath_gg <- ggplot(long_fungi_weath_gg, aes(x = merged_percent, y = age), fill = assignment) +
   coord_flip() +
   geom_areah() + 
-  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
-  facet_grid(assignment ~ ., scales = "free", space = "fixed") + # facet by taxon
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) +
+  facet_grid(assignment ~ ., scales = "free", space = "fixed") + 
+  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) +
   xlab(paste0("Relative abundance (%)")) +
-  #theme_bw() +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
@@ -62,12 +69,11 @@ fungi_pH_clean_res$real_5 <- factor(fungi_pH_clean_res$real_5, levels = unique(f
 
 fungi_pH_gg_res$X <- as.numeric(fungi_pH_gg_res$X) / 1000 # show age as ka
 
-
 fungi_pH_gg_res$levels <- ordered(fungi_pH_gg_res$real_5, levels=c(5, 4, 3, 2, 1))
 
 ### ph only alkaline and acidic
-fungi_pH_gg_res$real_5 <- stringr::str_replace_all(fungi_pH_gg_res$real_5,"5", "4")# symbiosis to PGPB
-fungi_pH_gg_res$levels <- stringr::str_replace_all(fungi_pH_gg_res$levels,"5", "4")# symbiosis to PGPB
+fungi_pH_gg_res$real_5 <- stringr::str_replace_all(fungi_pH_gg_res$real_5,"5", "4")
+fungi_pH_gg_res$levels <- stringr::str_replace_all(fungi_pH_gg_res$levels,"5", "4")
 fungi_pH_gg_res_acAl <- fungi_pH_gg_res[!(fungi_pH_gg_res$real_5 == "2" | fungi_pH_gg_res$real_5 == "3"),]
 fungi_pH_gg_res_acAl <- fungi_pH_gg_res_acAl[,-4]
 
@@ -85,35 +91,41 @@ fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill 
   scale_fill_viridis_d() +
   #theme_bw() +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
-                                                   axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
+                                                   axis.line.y = element_line(color="black", size = 0.5), legend.position = "none")
+
+### print the plot
+print(fungi_pH_plot)
 
 ### Load bacterial data
 bact_resampl <- read.delim("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
-long.convert_bact_res <- bact_resampl %>% # convert into parameter-long form
+### convert into parameter-long form
+long.convert_bact_res <- bact_resampl %>% 
   gather(-X, key = Name, value = percentage) %>%
   group_by(X) %>%
   ungroup()
-long_bact_res <- arrange(long.convert_bact_res, desc(percentage)) # sort the taxa by relative abundance
-long_bact_res$taxa <- factor(long_bact_res$Name, levels = unique(long_bact_res$Name)) # force the taxa order
+### sort the taxa by relative abundance
+long_bact_res <- arrange(long.convert_bact_res, desc(percentage))
+### force the taxa order
+long_bact_res$taxa <- factor(long_bact_res$Name, levels = unique(long_bact_res$Name))
 
 ### split the assigned name into three columns
 long_bact_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_bact_res$Name, '_', 3)
-long_bact_res$real_percent <- (long_bact_res$percentage)/24285*100 ###real percentage is count/resampling count*100
+long_bact_res$real_percent <- (long_bact_res$percentage)/24285*100
 
 ### rename some of the initial assignments to narrow them down
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"As..Sb", "As") ##As, Sb to As
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"S..As", "As") ##S, As to As
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Au", "metalls") ##Au to metalls
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..Cl", "C..halogene")# C, Cl to C, halogene
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Fe..S", "Fe")# Fe, S to Fe
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Fe..Mn", "Fe")# Fe, Mn to Fe
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Mn", "C, Mn")# Mn to C, Mn
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, C, Mn", "C, Mn")# Mn to C, Mn
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"symbiosis", "PGPB")# symbiosis to PGPB
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mn", "C")# symbiosis to PGPB
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mo", "C")# symbiosis to PGPB
-long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..C", "C")# symbiosis to PGPB
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"As..Sb", "As")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"S..As", "As")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Au", "metalls")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..Cl", "C..halogene")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Fe..S", "Fe")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Fe..Mn", "Fe")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"Mn", "C, Mn")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, C, Mn", "C, Mn")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"symbiosis", "PGPB")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mn", "C")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mo", "C")
+long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..C", "C")
 
 ### delete those with pH "out" or rename
 bact_pH_clean_res <- long_bact_res[!(long_bact_res$real_5 == "out" | long_bact_res$real_5 == "" | long_bact_res$real_5 == "unknown"),]
@@ -131,10 +143,9 @@ bact_pH_gg_res$X <- as.numeric(bact_pH_gg_res$X) / 1000 # show age as ka
 
 bact_pH_gg_res$levels <- ordered(bact_pH_gg_res$real_5, levels=c(5,4,3,2,1))
 
-
 ### pH only alkaline and acidic
-bact_pH_gg_res$real_5 <- stringr::str_replace_all(bact_pH_gg_res$real_5,"5", "4")# symbiosis to PGPB
-bact_pH_gg_res$levels <- stringr::str_replace_all(bact_pH_gg_res$levels,"5", "4")# symbiosis to PGPB
+bact_pH_gg_res$real_5 <- stringr::str_replace_all(bact_pH_gg_res$real_5,"5", "4")
+bact_pH_gg_res$levels <- stringr::str_replace_all(bact_pH_gg_res$levels,"5", "4")
 bact_pH_gg_res_acAl <- bact_pH_gg_res[!(bact_pH_gg_res$real_5 == "2" | bact_pH_gg_res$real_5 == "3"),]
 bact_pH_gg_res_acAl <- bact_pH_gg_res_acAl[,-4]
 
@@ -160,17 +171,17 @@ bact_nutr <- long_bact_res[!(long_bact_res$assignment == "As" | long_bact_res$as
 ),]
 
 ### merge further the assignments
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..Fe", "C")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..halogene", "C")# symbiosis to PGPBz
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..Mo", "C")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..N..Cl|C..N..Mo", "C, N")# symbiosis to PGPBz
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..N", "C, N")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C, N..P", "C, N, P")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..P", "C, P")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..S", "C, S")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"N..P", "N, P")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"N..S", "N, S")# symbiosis to PGPB
-bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"P..C..S..Cl..oxalates..silicates", "C, P, S")# symbiosis to PGPB
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..Fe", "C")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..halogene", "C")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..Mo", "C")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..N..Cl|C..N..Mo", "C, N")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..N", "C, N")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C, N..P", "C, N, P")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..P", "C, P")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"C..S", "C, S")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"N..P", "N, P")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"N..S", "N, S")
+bact_nutr$assignment <- stringr::str_replace_all(bact_nutr$assignment,"P..C..S..Cl..oxalates..silicates", "C, P, S")
 
 nutr_gg_res <- bact_nutr %>%
   group_by(X) %>%
@@ -181,7 +192,7 @@ nutr_gg_res <- nutr_gg_res %>%
   summarise(ecol_percent = (sum(nutr_percent)))
 nutr_gg_res$assignment <- factor(nutr_gg_res$assignment, levels = unique(nutr_gg_res$assignment))
 
-nutr_gg_res$X <- as.numeric(nutr_gg_res$X) / 1000 # show age as ka
+nutr_gg_res$X <- as.numeric(nutr_gg_res$X) / 1000
 
 nutr_gg_res_plot <- nutr_gg_res[(nutr_gg_res$assignment == "C" | nutr_gg_res$assignment == "N" | nutr_gg_res$assignment == "S"
 ),]
@@ -198,16 +209,19 @@ nutr_gg <- ggplot(nutr_gg_res_plot, aes(x = ecol_percent, y = X, fill = assignme
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-
 ### load plant data 
 plant_resampl <- read.delim("2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
 
-long.convert_plant_res <- plant_resampl %>% # convert into parameter-long form
+### convert into parameter-long form
+long.convert_plant_res <- plant_resampl %>%
   gather(-X, key = Name, value = percentage) %>%
   group_by(X) %>%
   ungroup()
-long_plant_res <- arrange(long.convert_plant_res, desc(percentage)) # sort the taxa by relative abundance
-long_plant_res$taxa <- factor(long_plant_res$Name, levels = unique(long_plant_res$Name)) # force the taxa order
+
+### sort the taxa by relative abundance
+long_plant_res <- arrange(long.convert_plant_res, desc(percentage))
+### force the taxa order
+long_plant_res$taxa <- factor(long_plant_res$Name, levels = unique(long_plant_res$Name))
 
 ### split the assigned name into three columns
 long_plant_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_plant_res$Name, '_', 3)
@@ -231,8 +245,8 @@ plant_pH_gg_res$X <- as.numeric(plant_pH_gg_res$X) / 1000 # show age as ka
 plant_pH_gg_res$levels <- ordered(plant_pH_gg_res$real_5, levels=c(5,4,3,2,1))
 
 ### ph only alkaline and acidic
-plant_pH_gg_res$real_5 <- stringr::str_replace_all(plant_pH_gg_res$real_5,"5", "4")# symbiosis to PGPB
-plant_pH_gg_res$levels <- stringr::str_replace_all(plant_pH_gg_res$levels,"5", "4")# symbiosis to PGPB
+plant_pH_gg_res$real_5 <- stringr::str_replace_all(plant_pH_gg_res$real_5,"5", "4")
+plant_pH_gg_res$levels <- stringr::str_replace_all(plant_pH_gg_res$levels,"5", "4")
 
 plant_pH_clean_res_acAl <- plant_pH_gg_res[!(plant_pH_gg_res$real_5 == "2" | plant_pH_gg_res$real_5 == "3"),]
 
@@ -258,7 +272,8 @@ plant_pH_plot <- ggplot(plant_pH_clean_res_acAl, aes(x = ecol_percent, y = X, fi
 xrf_new <- read.delim("2022-08-15_xrf_for_smoothing.csv", sep=";")
 age <- read.delim("PG1341_woody_seg6_minus145cm_boundary_168_ages.txt", sep="\t",  header=TRUE, stringsAsFactors=FALSE, dec=",")
 
-xrf_age <- merge(xrf_new, age, by = "depth") ### combine age and xrf_clean data
+### combine age and xrf_clean data
+xrf_age <- merge(xrf_new, age, by = "depth")
 y <- xrf_age$mean ### smoothing of all values 
 
 K_l <- xrf_age$K
@@ -283,37 +298,8 @@ K_Ti <- ggplot(data=loess_xrf, aes(y=y/1000, x = (K_loess.fit/Ti_loess.fit))) +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
-# the following part gives error.
 
-### here all plot are merged
-#install.packages("grid")
-require(gridExtra)
-library(grid)
-
-library(gtable)
-gtable_show_layout(ggplotGrob(K_Ti)) #12 x 10
-gtable_show_layout(ggplotGrob(weath_gg)) # 14 x 10
-gtable_show_layout(ggplotGrob(nutr_gg)) # 16 x 10
-gtable_show_layout(ggplotGrob(plant_pH_plot)) #14 x10
-gtable_show_layout(ggplotGrob(fungi_pH_plot)) ## 14 x 10
-gtable_show_layout(ggplotGrob(bact_pH_plot)) ## 14 x10
-
-grid.newpage() # neue seite 
-all_combined <- grid.draw(rbind(ggplotGrob(K_Ti), 
-  ggplotGrob(weath_gg),
-  ggplotGrob(nutr_gg),
-  ggplotGrob(plant_pH_plot),
-  ggplotGrob(fungi_pH_plot),
-  ggplotGrob(bact_pH_plot),
-  size = "first"))
-
-svg(filename = "2023-04-06_all_weathering.svg", width = 8, height = 20)
-print(all_combined)
-dev.off()
-
-
-# fix that part:
-# Convert ggplot objects to gtables
+### Convert ggplot objects to gtables
 K_Ti_grob <- ggplotGrob(K_Ti)
 weath_gg_grob <- ggplotGrob(weath_gg)
 nutr_gg_grob <- ggplotGrob(nutr_gg)
@@ -321,7 +307,7 @@ plant_pH_plot_grob <- ggplotGrob(plant_pH_plot)
 fungi_pH_plot_grob <- ggplotGrob(fungi_pH_plot)
 bact_pH_plot_grob <- ggplotGrob(bact_pH_plot)
 
-# Combine grobs vertically
+### Combine grobs vertically
 all_combined <- gtable_rbind(K_Ti_grob, 
                              weath_gg_grob, 
                              nutr_gg_grob, 
@@ -331,7 +317,6 @@ all_combined <- gtable_rbind(K_Ti_grob,
 
 grid.newpage()
 grid.draw(all_combined)
-
 svg(filename = "2023-04-06_all_weathering2.svg", width = 8, height = 20)
-grid.draw(all_combined)  # Use grid.draw() instead of print()
+grid.draw(all_combined)
 dev.off()
