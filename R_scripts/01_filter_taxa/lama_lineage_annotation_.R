@@ -13,9 +13,9 @@ names(bhv) <- c("samples", "percentage", "CladeCount", "TaxCount", "Rank", "taxI
 reseq <- read.delim("Lama_resequenced_nt2022_0.8.txt", header = FALSE)
 names(reseq) <- c("samples", "percentage", "CladeCount", "TaxCount", "Rank", "taxID", "Name")
 
-apmg_lin <- read.delim2("out.kraken/lineage_lama_apmg3738_nt_0.8.csv", sep = ",", header = TRUE)
-bhv_lin <- read.delim2("out.kraken/lineage_lama_bhv1_nt_0.8.csv", sep = ",", header = TRUE)
-reseq_lin <- read.delim2("out.kraken/lineage_lama_bhv2_nt_0.8.csv", sep = ",", header = TRUE)
+apmg_lin <- read.delim2("lineage_lama_apmg3738_nt_0.8.csv", sep = ",", header = TRUE)
+bhv_lin <- read.delim2("lineage_lama_bhv1_nt_0.8.csv", sep = ",", header = TRUE)
+reseq_lin <- read.delim2("lineage_lama_bhv2_nt_0.8.csv", sep = ",", header = TRUE)
 
 ### set to memory limit
 memory.limit(size=56000)
