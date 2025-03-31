@@ -8,7 +8,7 @@ library(ggplot2)
 library(tidypaleo)
 
 ### load fungi data
-fungi_resampl <- read.delim("../02_resampling/Output/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
+fungi_resampl <- read.delim("../02_resampling/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
  
 ### convert into parameter-long form
 long.convert_fungi_res <- fungi_resampl %>%
@@ -39,7 +39,7 @@ long_fungi_res_gg <- long_fungi_res_gg %>%
   summarise(merged_percent = (sum(real_percent)))
 
 ### load bacteria data
-bact_resampl <- read.delim("../02_resampling/Output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_bact_res <- bact_resampl %>%
@@ -82,7 +82,7 @@ long_bact_res_gg <- long_bact_res_gg %>%
   summarise(merged_percent = (sum(real_percent)))
 
 ### load plant data
-plant_resampl <- read.delim("../02_resampling/Output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
+plant_resampl <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ## convert into parameter-long form
 long.convert_plant_res <- plant_resampl %>%
