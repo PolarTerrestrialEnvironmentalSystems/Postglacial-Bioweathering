@@ -10,9 +10,9 @@ library(imputeTS)
 
 setwd("~/Postglacial-Bioweathering-main/R_scripts/Figure_2")
 
-vegetation <- read.delim("../02_resampling/Output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
-fungi <- read.delim("../02_resampling/Output/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
-bacteria <- read.delim("../02_resampling/Output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+vegetation <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
+fungi <- read.delim("../02_resampling/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
+bacteria <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 temperature <- read.delim("tagg_temperatures_paleo.csv", sep = ";", dec = ",")
 time <- read.delim("time_variable.txt", sep = "\t")
 
