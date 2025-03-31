@@ -12,7 +12,7 @@ library(gtable)
 setwd("~/Postglacial-Bioweathering-main/R_scripts/Figure_5")
 
 ### load fungi data
-fungi_resampl <- read.delim("../02_resampling/Output/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
+fungi_resampl <- read.delim("../02_resampling/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_fungi_res <- fungi_resampl %>% 
@@ -98,7 +98,7 @@ fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill 
 print(fungi_pH_plot)
 
 ### Load bacterial data
-bact_resampl <- read.delim("../02_resampling/Output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_bact_res <- bact_resampl %>% 
@@ -211,7 +211,7 @@ nutr_gg <- ggplot(nutr_gg_res_plot, aes(x = ecol_percent, y = X, fill = assignme
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
 ### load plant data 
-plant_resampl <- read.delim("../02_resampling/Output/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
+plant_resampl <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_plant_res <- plant_resampl %>%
