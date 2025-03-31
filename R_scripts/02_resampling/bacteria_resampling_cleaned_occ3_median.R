@@ -2,11 +2,11 @@
 library(tidyverse)
 options(stringsAsFactors=FALSE)
 ### select main folder containing folders named exactly "data"
-# setwd("~/Postglacial-Bioweathering-main/R_scripts/Resampling/02_resampling")
+setwd("~/Postglacial-Bioweathering-main/R_scripts/02_resampling")
 
 rm(list=ls())
 ### data table was exported from xlsx here csv2: sep=";", dec=","
-specseq=read.delim("bacteria_assigned_resampling_occ3.csv", header = TRUE, sep = ";")
+specseq=read.delim("../01_filter_taxa/bacteria_assigned_resampling_occ3.csv", header = TRUE, sep = ";")
 specseq <- specseq[,-1]
 
 ### check data is of required format, count data as integer/double, taxa names as strings
