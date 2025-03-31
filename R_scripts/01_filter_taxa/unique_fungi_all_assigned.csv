@@ -1,0 +1,1385 @@
+Name;ecology;pH;real_5
+[Ashbya] aceris (nom. inval.);yeast;unknown;out
+[Candida] auris;yeast;unknown;out
+[Candida] glabrata;yeast;unknown;out
+[Candida] haemuloni;yeast;unknown;out
+[Candida] hispaniensis;yeast;unknown;out
+[Candida] intermedia;yeast;unknown;out
+[Candida] zeylanoides;yeast;unknown;out
+[Hymenula] cerealis;parasite;unknown;out
+Aaosphaeria;unknown;unknown;out
+Aaosphaeria arxii;unknown;unknown;out
+Aaosphaeria arxii CBS 175.79;unknown;unknown;out
+Absidia;saprotroph;acidic to slightly alkaline;2
+Absidia glauca;saprotroph;acidic to slightly alkaline;2
+Acaromyces;parasite;unknown;out
+Acaromyces ingoldii;parasite;unknown;out
+Acrospermaceae;unknown;unknown;out
+Acrospermales;unknown;unknown;out
+Agaricaceae;unknown;slightly acidic;2
+Agaricales;unknown;slightly acidic;2
+Agaricomycetes;unknown;unknown;out
+Agaricomycetes incertae sedis;unknown;unknown;out
+Agaricomycetidae;unknown;unknown;out
+Agaricomycotina;unknown;unknown;out
+Agaricostilbales;saprotroph;unknown;out
+Agaricostilbomycetes;unknown;unknown;out
+Agaricus;saprotroph;slightly acidic;2
+Agaricus bisporus;saprotroph;slightly acidic;2
+Ajellomycetaceae;parasite;unknown;out
+Akanthomyces;contaminant;contaminant;out
+Alectoria;lichen;acidic;1
+Alectoria fallacina;lichen;acidic;1
+Alloascoidea;yeast;unknown;out
+Alloascoidea hylecoeti;yeast;unknown;out
+Alloascoideaceae;yeast;unknown;out
+Alternaria;mould;slightly acidic;2
+Alternaria alternata;mould;slightly acidic;2
+Alternaria alternata complex;mould;slightly acidic;2
+Alternaria arborescens;mould;slightly acidic;2
+Alternaria burnsii;mould;slightly acidic;2
+Alternaria oxytropis;mould;slightly acidic;2
+Alternaria sect. Alternaria;mould;slightly acidic;2
+Alternaria sect. Porri;mould;slightly acidic;2
+Alternaria solani;mould;slightly acidic;2
+Amanita;mycorrhizae;unknown;out
+Amanita phalloides;mycorrhizae;unknown;out
+Amanitaceae;unknown;unknown;out
+Amorphotheca;unknown;unknown;out
+Amorphotheca resinae;unknown;unknown;out
+Amorphotheca resinae ATCC 22711;unknown;unknown;out
+Ancylistaceae;parasite;unknown;out
+Annulohypoxylon;saprotroph;neutral;3
+Annulohypoxylon stygium;saprotroph;neutral;3
+Antarctomyces;unknown;unknown;out
+Antarctomyces pellizariae;unknown;unknown;out
+Anthracocystis;parasite;pH tolerant;out
+Anthracocystis panici-leucophaei;parasite;pH tolerant;out
+Anthracoidea;parasite;neutral;3
+Anthracoidea elynae;parasite;neutral;3
+Anthracoidea sclerotiformis;parasite;neutral;3
+Anthracoideaceae;parasite;unknown;out
+Apiospora arundinis;saprotroph;unknown;out
+Apiosporaceae;saprotroph;unknown;out
+Apiotrichum;yeast;neutral to slightly alkaline;4
+Apiotrichum laibachii;yeast;neutral to slightly alkaline;4
+Apiotrichum mycotoxinovorans;yeast;neutral to slightly alkaline;4
+Apiotrichum porosum;yeast;neutral to slightly alkaline;4
+Aplosporella;saprotroph;unknown;out
+Aplosporella prunicola;saprotroph;unknown;out
+Aplosporella prunicola CBS 121167;saprotroph;unknown;out
+Aplosporellaceae;unknown;unknown;out
+Armillaria;parasite;pH tolerant;out
+Armillaria ostoyae;parasite;pH tolerant;out
+Armillaria sinapina;parasite;pH tolerant;out
+Arthoniales;unknown;unknown;out
+Arthoniomycetes;unknown;unknown;out
+Arthrocladium;mould;unknown;out
+Arthrocladium fulminans;mould;unknown;out
+Arthroderma;unknown;no preference;out
+Arthroderma uncinatum;unknown;no preference;out
+Arthrodermataceae;unknown;unknown;out
+Ascochyta;parasite;unknown;out
+Ascochyta pisi;parasite;unknown;out
+Ascochyta rabiei;parasite;unknown;out
+Ascoidea;yeast;unknown;out
+Ascoidea rubescens;yeast;unknown;out
+Ascoidea rubescens DSM 1968;yeast;unknown;out
+Ascoideaceae;yeast;unknown;out
+Ascomycota;unknown;unknown;out
+Aspergillaceae;saprotroph;neutral to slightly alkaline;4
+Aspergillus;saprotroph;neutral to slightly alkaline;4
+Aspergillus aculeatus;saprotroph;neutral to slightly alkaline;4
+Aspergillus aculeatus ATCC 16872;saprotroph;neutral to slightly alkaline;4
+Aspergillus bombycis;saprotroph;neutral to slightly alkaline;4
+Aspergillus candidus;saprotroph;neutral to slightly alkaline;4
+Aspergillus chevalieri;saprotroph;neutral to slightly alkaline;4
+Aspergillus clavatus;saprotroph;neutral to slightly alkaline;4
+Aspergillus clavatus NRRL 1;saprotroph;neutral to slightly alkaline;4
+Aspergillus costaricaensis CBS 115574;saprotroph;neutral to slightly alkaline;4
+Aspergillus costaricensis;saprotroph;neutral to slightly alkaline;4
+Aspergillus flavus;saprotroph;neutral to slightly alkaline;4
+Aspergillus fumigatus;saprotroph;neutral to slightly alkaline;4
+Aspergillus glaucus;saprotroph;neutral to slightly alkaline;4
+Aspergillus glaucus CBS 516.65;saprotroph;neutral to slightly alkaline;4
+Aspergillus heteromorphus;saprotroph;neutral to slightly alkaline;4
+Aspergillus heteromorphus CBS 117.55;saprotroph;neutral to slightly alkaline;4
+Aspergillus japonicus;saprotroph;neutral to slightly alkaline;4
+Aspergillus japonicus CBS 114.51;saprotroph;neutral to slightly alkaline;4
+Aspergillus luchuensis;saprotroph;neutral to slightly alkaline;4
+Aspergillus mulundensis;saprotroph;neutral to slightly alkaline;4
+Aspergillus nidulans;saprotroph;neutral to slightly alkaline;4
+Aspergillus nidulans FGSC A4;saprotroph;neutral to slightly alkaline;4
+Aspergillus niger;saprotroph;neutral to slightly alkaline;4
+Aspergillus nomiae;saprotroph;neutral to slightly alkaline;4
+Aspergillus nomiae NRRL 13137;saprotroph;neutral to slightly alkaline;4
+Aspergillus puulaauensis;saprotroph;neutral to slightly alkaline;4
+Aspergillus steynii;saprotroph;neutral to slightly alkaline;4
+Aspergillus steynii IBT 23096;saprotroph;neutral to slightly alkaline;4
+Aspergillus subgen. Aspergillus;saprotroph;neutral to slightly alkaline;4
+Aspergillus subgen. Circumdati;saprotroph;neutral to slightly alkaline;4
+Aspergillus subgen. Fumigati;saprotroph;neutral to slightly alkaline;4
+Aspergillus subgen. Nidulantes;saprotroph;neutral to slightly alkaline;4
+Aspergillus terreus;saprotroph;neutral to slightly alkaline;4
+Aspergillus terreus NIH2624;saprotroph;neutral to slightly alkaline;4
+Aspergillus uvarum;saprotroph;neutral to slightly alkaline;4
+Aspergillus uvarum CBS 121591;saprotroph;neutral to slightly alkaline;4
+Aspergillus welwitschiae;saprotroph;neutral to slightly alkaline;4
+Astrosphaeriellaceae;unknown;unknown;out
+Aureobasidium;mould;neutral;3
+Aureobasidium namibiae;mould;neutral;3
+Aureobasidium namibiae CBS 147.97;mould;neutral;3
+Aureobasidium pullulans;mould;neutral;3
+Aureobasidium pullulans EXF-150;mould;neutral;3
+Aureobasidium subglaciale;mould;neutral;3
+Aureobasidium subglaciale EXF-2481;mould;neutral;3
+Auricularia;saprotroph;acidic;1
+Auriculariaceae;saprotroph;unknown;out
+Auriculariales;saprotroph;unknown;out
+Babjeviella;yeast;slightly acidic;2
+Babjeviella inositovora;yeast;slightly acidic;2
+Babjeviella inositovora NRRL Y-12698;yeast;slightly acidic;2
+Bacidia;lichen;slightly acidic;2
+Basidiomycota;unknown;unknown;out
+Batrachochytrium;pathogen;neutral;3
+Batrachochytrium dendrobatidis;pathogen;neutral;3
+Batrachochytrium dendrobatidis JAM81;pathogen;neutral;3
+Baudoinia;unknown;unknown;out
+Baudoinia panamericana;unknown;unknown;out
+Baudoinia panamericana UAMH 10762;unknown;unknown;out
+Beauveria;parasite (insects);no preference;out
+Beauveria bassiana;parasite (insects);no preference;out
+Beauveria bassiana ARSEF 2860;parasite (insects);no preference;out
+Bionectriaceae;unknown;unknown;out
+Bipolaris;parasite;alkaline;5
+Bipolaris cookei;parasite;alkaline;5
+Bipolaris maydis;parasite;alkaline;5
+Bipolaris oryzae;parasite;alkaline;5
+Bipolaris sorokiniana;parasite;alkaline;5
+Blastocladiaceae;saprotroph;unknown;out
+Blastocladiales;unknown;unknown;out
+Blastocladiomycetes;unknown;unknown;out
+Blastocladiomycota;unknown;unknown;out
+Blastocladiomycota incertae sedis;unknown;unknown;out
+Blastomyces;yeast;unknown;out
+Blumeria;parasite;unknown;out
+Blumeria graminis;parasite;unknown;out
+Blumeria graminis f. sp. tritici;parasite;unknown;out
+Bolbitiaceae;saprotroph;unknown;out
+Boletaceae;mycorrhizae;unknown;out
+Boletales;unknown;unknown;out
+Boletineae;unknown;unknown;out
+Boletoideae;unknown;unknown;out
+Bondarzewiaceae;unknown;unknown;out
+Botryosphaeriaceae;unknown;unknown;out
+Botryosphaeriales;unknown;unknown;out
+Botrytis;parasite;acidic;1
+Botrytis cinerea;parasite;acidic;1
+Botrytis cinerea B05.10;parasite;acidic;1
+Botrytis cinerea T4;parasite;acidic;1
+Botrytis deweyae;parasite;acidic;1
+Botrytis fabae;parasite;acidic;1
+Botrytis fragariae;parasite;acidic;1
+Botrytis porri;parasite;acidic;1
+Botrytis sinoallii;parasite;acidic;1
+Brachybasidiaceae;parasite;unknown;out
+Brettanomyces;yeast;acidic;1
+Brettanomyces nanus;yeast;acidic;1
+Bryoria;lichen;unknown;out
+Bryoria tenuis;lichen;unknown;out
+Bulleribasidiaceae;yeast;unknown;out
+Cadophora;parasite;slightly alkaline;4
+Cadophora dextrinospora;parasite;slightly alkaline;4
+Cadophora fastigiata;parasite;slightly alkaline;4
+Cadophora gregata;parasite;slightly alkaline;4
+Cadophora malorum;parasite;slightly alkaline;4
+Cadophora melinii;parasite;slightly alkaline;4
+Cairneyella;mycorrhizae;unknown;out
+Cairneyella variabilis;mycorrhizae;unknown;out
+Caliciales;lichen;unknown;out
+Calycellina;unknown;unknown;out
+Calycellina populina;unknown;unknown;out
+Candida;yeast;acidic to slightly alkaline;2
+Candida albicans;yeast;acidic to slightly alkaline;2
+Candida orthopsilosis;yeast;acidic to slightly alkaline;2
+Candida orthopsilosis Co 90-125;yeast;acidic to slightly alkaline;2
+Candida parapsilosis;yeast;acidic to slightly alkaline;2
+Candida tropicalis;yeast;acidic to slightly alkaline;2
+Candida/Lodderomyces clade;yeast;acidic to slightly alkaline;2
+Cantharellaceae;symbiotic;unknown;out
+Cantharellales;unknown;unknown;out
+Cantharellus;mycorrhizae;acidic;1
+Cantharellus anzutake;mycorrhizae;acidic;1
+Capillidium heterosporum;unknown;unknown;out
+Capronia;yeast;unknown;out
+Capronia epimyces;yeast;unknown;out
+Capronia epimyces CBS 606.96;yeast;unknown;out
+Ceraceosoraceae;parasite;unknown;out
+Ceraceosorales;parasite;unknown;out
+Ceraceosorus;parasite;unknown;out
+Ceraceosorus guamensis;parasite;unknown;out
+Ceratobasidiaceae;mycorrhizae;unknown;out
+Ceratobasidium;mycorrhizae;slightly alkaline;4
+Ceratobasidium sp. AG-Ba;mycorrhizae;slightly alkaline;4
+Cercospora;parasite;unknown;out
+Cercospora sojina;parasite;unknown;out
+Cetraria;lichen;unknown;out
+Polychytrium sp. JEL598;saprotroph;unknown;out
+Chaetomiaceae;saprotroph;neutral;3
+Chaetomium;saprotroph;neutral;3
+Chaetomium globosum;saprotroph;neutral;3
+Chaetomium globosum CBS 148.51;saprotroph;neutral;3
+Chaetothyriales;unknown;unknown;out
+Chaetothyriales sp. TRN475;unknown;unknown;out
+Chaetothyriomycetidae;unknown;unknown;out
+Chalciporoideae;mycorrhizae;unknown;out
+Chalciporus;mycorrhizae;acidic;1
+Chrysoporthe;parasite;acidic;1
+Chrysoporthe sp. MAF-2017a;parasite;acidic;1
+Chytridiomycetes;unknown;unknown;out
+Chytridiomycota;unknown;unknown;out
+Chytridiomycota incertae sedis;unknown;unknown;out
+Cladonia;lichen;slightly acidic;2
+Cladoniaceae;lichen;slightly acidic;2
+Cladophialophora;unknown;acidic;1
+Cladophialophora bantiana;unknown;acidic;1
+Cladophialophora bantiana CBS 173.52;unknown;acidic;1
+Cladophialophora carrionii;saprotroph;acidic;1
+Cladophialophora carrionii CBS 160.54;saprotroph;acidic;1
+Cladophialophora humicola;unknown;acidic;1
+Cladophialophora immunda;yeast;acidic;1
+Cladophialophora psammophila;yeast;acidic;1
+Cladophialophora psammophila CBS 110553;yeast;acidic;1
+Cladophialophora yegresii;yeast;acidic;1
+Cladophialophora yegresii CBS 114405;yeast;acidic;1
+Cladosporiaceae;mould;slightly acidic;2
+Cladosporiales;mould;slightly acidic;2
+Cladosporium;mould;slightly acidic;2
+Cladosporium phlei;mould;slightly acidic;2
+Cladosporium sp.;mould;slightly acidic;2
+Cladosporium sphaerospermum;mould;slightly acidic;2
+Clauzadea;lichen;alkaline;5
+Clauzadea monticola;lichen;alkaline;5
+Clavaria;saprotroph;unknown;out
+Clavaria fumosa;saprotroph;unknown;out
+Clavariaceae;saprotroph;unknown;out
+Claviceps;parasite;unknown;out
+Claviceps purpurea;parasite;unknown;out
+Clavicipitaceae;parasite;unknown;out
+Clavicipitaceae sp. D13;parasite;unknown;out
+Clavispora;yeast;alkaline;5
+Clavispora lusitaniae;yeast;alkaline;5
+Clavulina;mycorrhizae;slightly acidic;2
+Clavulina sp.;mycorrhizae;slightly acidic;2
+Clitopilus;mycorrhizae;slightly acidic;2
+Clitopilus hobsonii;mycorrhizae;slightly acidic;2
+Coccidioides;parasite;acidic to alkaline;out
+Coccidioides immitis;parasite;acidic to alkaline;out
+Coccidioides immitis RS;parasite;acidic to alkaline;out
+Collemataceae;lichen;unknown;out
+Collematineae;lichen;unknown;out
+Colletotrichum;unknown;acidic;1
+Colletotrichum acutatum;parasite;acidic;1
+Colletotrichum acutatum species complex;parasite;acidic;1
+Colletotrichum aenigma;parasite;acidic;1
+Colletotrichum boninense species complex;parasite;acidic;1
+Colletotrichum destructivum species complex;parasite;acidic;1
+Colletotrichum fructicola;parasite;acidic;1
+Colletotrichum gloeosporioides species complex;parasite;acidic;1
+Colletotrichum graminicola;parasite;acidic;1
+Colletotrichum graminicola M1.001;parasite;acidic;1
+Colletotrichum graminicola species complex;parasite;acidic;1
+Colletotrichum higginsianum;parasite;acidic;1
+Colletotrichum higginsianum IMI 349063;parasite;acidic;1
+Colletotrichum karsti;parasite;acidic;1
+Colletotrichum orbiculare species complex;parasite;acidic;1
+Colletotrichum orchidophilum;parasite;acidic;1
+Colletotrichum scovillei;parasite;acidic;1
+Colletotrichum truncatum;parasite;acidic;1
+Colletotrichum truncatum species complex;parasite;acidic;1
+Coniophora;saprotroph;unknown;out
+Coniophora puteana;saprotroph;unknown;out
+Coniophora puteana RWD-64-598 SS2;saprotroph;unknown;out
+Coniophoraceae;unknown;unknown;out
+Coniophorineae;unknown;unknown;out
+Coniosporium;yeast;unknown;out
+Coniosporium apollinis;yeast;unknown;out
+Coniosporium apollinis CBS 100218;yeast;unknown;out
+Coniothyriaceae;parasite;acidic;1
+Coniothyrium;parasite;acidic;1
+Coniothyrium glycines;parasite;acidic;1
+Coprinellus;saprotroph;no preference;out
+Coprinellus micaceus;saprotroph;no preference;out
+Coprinopsis;unknown;unknown;out
+Coprinopsis cinerea;unknown;unknown;out
+Coprinopsis cinerea okayama7#130;unknown;unknown;out
+Cordyceps;parasite;slightly acidic;2
+Cordyceps fumosorosea;parasite;slightly acidic;2
+Cordyceps fumosorosea ARSEF 2679;parasite;slightly acidic;2
+Cordyceps militaris;parasite;slightly acidic;2
+Cordycipitaceae;parasite;unknown;out
+Corticiales;unknown;unknown;out
+Cosmospora;unknown;unknown;out
+Cosmospora butyri;unknown;unknown;out
+Cryphonectria-Endothia species complex;parasite;unknown;out
+Cryphonectriaceae;parasite;unknown;out
+Cryptobasidiaceae;parasite;unknown;out
+Cryptococcaceae;yeast;acidic;1
+Cryptococcus;yeast;acidic;1
+Cryptococcus amylolentus;yeast;acidic;1
+Cryptococcus amylolentus CBS 6039;yeast;acidic;1
+Cryptococcus neoformans;yeast;acidic;1
+Cryptococcus neoformans species complex;yeast;acidic;1
+Cryptococcus neoformans var. neoformans;yeast;acidic;1
+Cryptococcus wingfieldii;yeast;acidic;1
+Cryptocoryneum;saprotroph;unknown;out
+Cryptocoryneum condensatum;saprotroph;unknown;out
+Cryptomyces;parasite;unknown;out
+Cryptomyces maximus;parasite;unknown;out
+Cunninghamellaceae;unknown;unknown;out
+Cutaneotrichosporon;yeast;unknown;out
+Cutaneotrichosporon oleaginosum;yeast;unknown;out
+Cyberlindnera;yeast;unknown;out
+Cyberlindnera fabianii;yeast;unknown;out
+Cyberlindnera jadinii;yeast;unknown;out
+Cyphellophora;yeast;unknown;out
+Cyphellophora europaea;yeast;unknown;out
+Cyphellophora europaea CBS 101466;yeast;unknown;out
+Cyphellophora reptans;yeast;unknown;out
+Cyphellophoraceae;yeast;unknown;out
+Cystofilobasidiaceae;yeast;unknown;out
+Cystofilobasidiales;yeast;unknown;out
+Cystofilobasidium;yeast;unknown;out
+Cystofilobasidium capitatum;yeast;unknown;out
+Daldinia;saprotroph;unknown;out
+Daldinia childiae;saprotroph;unknown;out
+Debaryomyces;yeast;acidic to slightly alkaline;2
+Debaryomyces fabryi;yeast;acidic to slightly alkaline;2
+Debaryomyces hansenii;yeast;acidic to slightly alkaline;2
+Debaryomyces hansenii CBS767;yeast;acidic to slightly alkaline;2
+Debaryomycetaceae;yeast;acidic to slightly alkaline;2
+Delitschia;saprotroph;unknown;out
+Delitschia anisomera;saprotroph;unknown;out
+Delitschiaceae;saprotroph;unknown;out
+Diaporthaceae;unknown;unknown;out
+Diaporthales;unknown;unknown;out
+Diaporthe;parasite;unknown;out
+Diaporthe nobilis;parasite;unknown;out
+Dichomitus;saprotroph;unknown;out
+Dichomitus squalens;saprotroph;unknown;out
+Dichomitus squalens LYAD-421 SS1;saprotroph;unknown;out
+Didymella;parasite;unknown;out
+Didymella exigua;parasite;unknown;out
+Didymella exigua CBS 183.55;parasite;unknown;out
+Didymellaceae;parasite;unknown;out
+Didymosphaeriaceae;unknown;unknown;out
+Dikarya;contaminant;contaminant;out
+Dioszegia;yeast;unknown;out
+Dioszegia changbaiensis;yeast;unknown;out
+Diplodia;parasite;acidic to slightly alkaline;2
+Diplodia corticola;parasite;acidic to slightly alkaline;2
+Dipodascaceae;yeast;unknown;out
+Dissoconiaceae;parasite;unknown;out
+Dissoconium;parasite;unknown;out
+Dissoconium aciculare;parasite;unknown;out
+Dissoconium aciculare CBS 342.82;parasite;unknown;out
+Diversispora;mycorrhizae;acidic?;1
+Diversispora sp. EE1;mycorrhizae;acidic?;1
+Diversisporaceae;mycorrhizae;unknown;out
+Diversisporales;mycorrhizae;unknown;out
+Dothideales;unknown;unknown;out
+dothideomyceta;unknown;unknown;out
+Dothideomycetes;unknown;unknown;out
+Dothideomycetes incertae sedis;unknown;unknown;out
+Dothideomycetidae;unknown;unknown;out
+Dothidotthia;parasite;unknown;out
+Dothidotthia symphoricarpi;parasite;unknown;out
+Dothidotthia symphoricarpi CBS 119687;parasite;unknown;out
+Dothidotthiaceae;parasite;unknown;out
+Dothioraceae;saprotroph;unknown;out
+Drepanopeziza brunnea;parasite;unknown;out
+Drepanopeziza brunnea f. sp. 'multigermtubi';parasite;unknown;out
+Drepanopeziza brunnea f. sp. 'multigermtubi' MB m1;parasite;unknown;out
+Endocarpon;lichen;neutral;3
+Endocarpon pusillum;lichen;neutral;3
+Endocarpon pusillum Z07020;lichen;neutral;3
+Entolomataceae;unknown;unknown;out
+Entomophthorales;parasite;unknown;out
+Entomophthoromycetes;parasite;unknown;out
+Entomophthoromycotina;parasite;unknown;out
+Entyloma;parasite;unknown;out
+Entylomataceae;parasite;unknown;out
+Entylomatales;parasite;unknown;out
+Entylomatales incertae sedis;parasite;unknown;out
+environmental samples;contaminant;contaminant;out
+Epichloe;parasite;slightly alkaline;4
+Epichloe typhina;parasite;slightly alkaline;4
+Episternus;unknown;unknown;out
+Episternus onthophagi;unknown;unknown;out
+Eremomyces;saprotroph;unknown;out
+Eremomyces bilateralis;saprotroph;unknown;out
+Eremomyces bilateralis CBS 781.70;saprotroph;unknown;out
+Eremomycetaceae;unknown;unknown;out
+Eremomycetales;unknown;unknown;out
+Eremothecium;mould;unknown;out
+Erysiphaceae;unknown;unknown;out
+Erysiphales;unknown;unknown;out
+Erysiphe;contaminant;contaminant;out
+Erysiphe necator;contaminant;contaminant;out
+Erysiphe pisi;contaminant;contaminant;out
+Eurotiales;unknown;unknown;out
+Eurotiomycetes;unknown;unknown;out
+Eurotiomycetidae;unknown;unknown;out
+Exobasidiales;parasite;unknown;out
+Exobasidiomycetes;parasite;unknown;out
+Exophiala;parasite;pH tolerant;out
+Exophiala aquamarina;parasite;pH tolerant;out
+Exophiala aquamarina CBS 119918;parasite;pH tolerant;out
+Exophiala lecanii-corni;parasite;pH tolerant;out
+Exophiala mesophila;parasite;pH tolerant;out
+Exophiala oligosperma;parasite;pH tolerant;out
+Exophiala spinifera;parasite;pH tolerant;out
+Exophiala xenobiotica;parasite;pH tolerant;out
+Exserohilum;parasite;unknown;out
+Exserohilum turcica Et28A;parasite;unknown;out
+Exserohilum turcicum;parasite;unknown;out
+Fibroporia;saprotroph;unknown;out
+Fibroporia radiculosa;saprotroph;unknown;out
+Filobasidiaceae;yeast;unknown;out
+Filobasidiales;yeast;unknown;out
+Flammulina;saprotroph;unknown;out
+Flammulina velutipes;saprotroph;unknown;out
+Fomitiporia;saprotroph;slightly acidic;2
+Fomitiporia mediterranea;saprotroph;slightly acidic;2
+Fomitiporia mediterranea MF3/22;saprotroph;slightly acidic;2
+Fomitopsidaceae;unknown;unknown;out
+Fomitopsis;unknown;unknown;out
+Fomitopsis pinicola;saprotroph;unknown;out
+Fonsecaea;parasite;unknown;out
+Fonsecaea monophora;parasite;unknown;out
+Fonsecaea multimorphosa;parasite;unknown;out
+Fonsecaea multimorphosa CBS 102226;parasite;unknown;out
+Fonsecaea pedrosoi;parasite;unknown;out
+Fonsecaea pedrosoi CBS 271.37;parasite;unknown;out
+fungal sp.;contaminant;contaminant;out
+fungal sp. I15F-00327;contaminant;contaminant;out
+Fungi;contaminant;contaminant;out
+Fungi incertae sedis;contaminant;contaminant;out
+Funneliformis;mycorrhizae;unknown;out
+Fusarium;parasite;acidic to slightly alkaline;2
+Fusarium avenaceum;parasite;acidic to slightly alkaline;2
+Fusarium fujikuroi;parasite;acidic to slightly alkaline;2
+Fusarium fujikuroi species complex;parasite;acidic to slightly alkaline;2
+Fusarium graminearum;parasite;acidic to slightly alkaline;2
+Fusarium incarnatum-equiseti species complex;parasite;acidic to slightly alkaline;2
+Fusarium oxysporum;parasite;acidic to slightly alkaline;2
+Fusarium oxysporum f. sp. koae;parasite;acidic to slightly alkaline;2
+Fusarium oxysporum Fo47;parasite;acidic to slightly alkaline;2
+Fusarium oxysporum NRRL 32931;parasite;acidic to slightly alkaline;2
+Fusarium oxysporum species complex;parasite;acidic to slightly alkaline;2
+Fusarium proliferatum;parasite;acidic to slightly alkaline;2
+Fusarium proliferatum ET1;parasite;acidic to slightly alkaline;2
+Fusarium pseudograminearum;parasite;acidic to slightly alkaline;2
+Fusarium sambucinum species complex;parasite;acidic to slightly alkaline;2
+Fusarium scirpi;parasite;acidic to slightly alkaline;2
+Fusarium solani;parasite;acidic to slightly alkaline;2
+Fusarium solani species complex;parasite;acidic to slightly alkaline;2
+Fusarium subglutinans;parasite;acidic to slightly alkaline;2
+Fusarium tricinctum;parasite;acidic to slightly alkaline;2
+Fusarium tricinctum species complex;parasite;acidic to slightly alkaline;2
+Fusarium vanettenii;parasite;acidic to slightly alkaline;2
+Fusarium vanettenii 77-13-4;parasite;acidic to slightly alkaline;2
+Fusarium verticillioides;parasite;acidic to slightly alkaline;2
+Fusarium verticillioides 7600;parasite;acidic to slightly alkaline;2
+Gaeumannomyces;parasite;unknown;out
+Gaeumannomyces tritici;parasite;unknown;out
+Gaeumannomyces tritici R3-111a-1;parasite;unknown;out
+Ganoderma;saprotroph;acidic;1
+Ganoderma applanatum;saprotroph;acidic;1
+Ganoderma boninense;saprotroph;acidic;1
+Gelatinodiscaceae;unknown;unknown;out
+Geminibasidiaceae;yeast;unknown;out
+Geminibasidiales;yeast;unknown;out
+Geminibasidiomycetes;yeast;unknown;out
+Geminibasidium;yeast;unknown;out
+Geoglossaceae;saprotroph;unknown;out
+Geoglossales;saprotroph;unknown;out
+Geoglossomycetes;saprotroph;unknown;out
+Geomyces;mycorrhizae;slightly acidic;2
+Geomyces sp. (in: Leotiomycetes);mycorrhizae;slightly acidic;2
+Geomyces sp. 21IN08;mycorrhizae;slightly acidic;2
+Geomyces sp. 21IN10;mycorrhizae;slightly acidic;2
+Georgefischeriales;parasite;unknown;out
+Geosmithia;parasite;unknown;out
+Geosmithia morbida;parasite;unknown;out
+Geotrichum;yeast;unknown;out
+Geotrichum candidum;yeast;unknown;out
+Gigasporaceae;mycorrhizae;unknown;out
+Glarea;unknown;unknown;out
+Glarea lozoyensis;unknown;unknown;out
+Glarea lozoyensis ATCC 20868;unknown;unknown;out
+Gloeophyllaceae;saprotroph;unknown;1
+Gloeophyllales;saprotroph;unknown;1
+Gloeophyllum;saprotroph;acidic;1
+Gloeophyllum trabeum;saprotroph;acidic;1
+Gloeophyllum trabeum ATCC 11539;saprotroph;acidic;1
+Glomeraceae;mycorrhizae;unknown;out
+Glomerales;mycorrhizae;unknown;out
+Glomerellaceae;mycorrhizae;unknown;out
+Glomerellales;mycorrhizae;unknown;out
+Glomeromycetes;mycorrhizae;unknown;out
+Glomeromycotina;mycorrhizae;unknown;out
+Gomphaceae;unknown;unknown;out
+Gomphales;unknown;unknown;out
+Gomphilloideae;lichen;unknown;out
+Graphidaceae;lichen;unknown;out
+Graphideae;lichen;unknown;out
+Graphidoideae;lichen;unknown;out
+Graphis;lichen;slightly acidic;2
+Graphis lineola;lichen;slightly acidic;2
+Graphis scripta;lichen;slightly acidic;2
+Grosmannia;saprotroph;unknown;out
+Grosmannia clavigera;saprotroph;unknown;out
+Grosmannia clavigera kw1407;saprotroph;unknown;out
+Gymnopilus;mycorrhizae;unknown;out
+Gymnopilus junonius;mycorrhizae;unknown;out
+Hamigera;saprotroph;unknown;out
+Hamigera paravellanea;saprotroph;unknown;out
+Hanseniaspora;yeast;acidic;1
+Hanseniaspora uvarum;yeast;acidic;1
+Hebeloma;mycorrhizae;pH tolerant;out
+Helotiaceae;unknown;unknown;out
+Helotiales;unknown;unknown;out
+Helotiales incertae sedis;unknown;unknown;out
+Helvella;mycorrhizae;unknown;out
+Helvella corium;mycorrhizae;unknown;out
+Helvella fibrosa;mycorrhizae;unknown;out
+Helvella sp. 9 RAC-2020;mycorrhizae;unknown;out
+Helvella ulvinenii;mycorrhizae;unknown;out
+Helvellaceae;mycorrhizae;unknown;out
+Herpotrichiellaceae;unknown;unknown;out
+Herpotrichiellaceae sp. MUT 5408;unknown;unknown;out
+Heterobasidion;parasite;alkaline;5
+Heterobasidion annosum;parasite;alkaline;5
+Heterobasidion annosum species complex;parasite;alkaline;5
+Heterobasidion irregulare;parasite;alkaline;5
+Heterobasidion irregulare TC 32-1;parasite;alkaline;5
+Heterodermia;lichen;slightly acidic;2
+Hirsutella;parasite;slightly acidic to alkaline;4
+Hirsutella minnesotensis;parasite;slightly acidic to alkaline;4
+Hirsutella rhossiliensis;parasite;slightly acidic to alkaline;4
+Histoplasma;parasite;slightly acidic to alkaline;4
+Histoplasma capsulatum;parasite;slightly acidic to alkaline;4
+Histoplasma capsulatum G186AR;parasite;slightly acidic to alkaline;4
+Hyaloscypha;saprotroph;acidic;1
+Hyaloscypha bicolor;mycorrhizae;acidic;1
+Hyaloscypha bicolor E;mycorrhizae;acidic;1
+Hyaloscypha hepaticicola/Rhizoscyphus ericae species complex;mycorrhizae;acidic;1
+Hyaloscyphaceae;saprotroph;unknown;out
+Hydnaceae;mycorrhizae;unknown;out
+Hygrocybe;mycorrhizae;unknown;out
+Hygrophoraceae;mycorrhizae;unknown;out
+Hymenochaetaceae;parasite;unknown;out
+Hymenochaetales;unknown;unknown;out
+Hyphopichia;yeast;neutral to slightly alkaline;4
+Hyphopichia burtonii;yeast;neutral to slightly alkaline;4
+Hyphopichia pseudoburtonii;yeast;neutral to slightly alkaline;4
+Hypocreaceae;saprotroph;unknown;out
+Hypocreales;unknown;unknown;out
+Hypocreales incertae sedis;unknown;unknown;out
+Hypocreomycetidae;unknown;unknown;out
+Hypogymnia;lichen;acidic;1
+Hypogymnia vittata;lichen;acidic;1
+Hypomyces;parasite;unknown;out
+Hypomyces aurantius;parasite;unknown;out
+Hypoxylaceae;saprotroph;unknown;out
+Icmadophilaceae;lichen;unknown;out
+Ilyonectria;parasite;slightly acidic to slightly alkaline;3
+Ilyonectria destructans;parasite;slightly acidic to slightly alkaline;3
+Ilyonectria sp.;parasite;slightly acidic to slightly alkaline;3
+Inocybaceae;mycorrhizae;unknown;out
+Inocybe;mycorrhizae;slightly acidic;2
+Inosperma;mycorrhizae;unknown;out
+Jaminaea;saprotroph;acidic;1
+Jaminaea rosea;saprotroph;acidic;1
+Kalmanozyma;parasite;unknown;out
+Kalmanozyma brasiliensis;parasite;unknown;out
+Kalmanozyma brasiliensis GHG001;parasite;unknown;out
+Kalmusia;parasite;unknown;out
+Kalmusia ebuli;parasite;unknown;out
+Kiflimonium;unknown;unknown;out
+Kiflimonium cf. curvulum CBS 100551;unknown;unknown;out
+Kluyveromyces;yeast;acidic to slightly alkaline;2
+Kluyveromyces lactis;yeast;acidic to slightly alkaline;2
+Kluyveromyces marxianus;yeast;acidic to slightly alkaline;2
+Komagataella;yeast;pH tolerant;out
+Komagataella phaffii;yeast;pH tolerant;out
+Komagataella phaffii CBS 7435;yeast;pH tolerant;out
+Kondoa;unknown;unknown;out
+Kondoa malvinella;unknown;unknown;out
+Kondoaceae;unknown;unknown;out
+Kuraishia;yeast;unknown;out
+Kuraishia capsulata;yeast;unknown;out
+Kuraishia capsulata CBS 1993;yeast;unknown;out
+Kurtzmaniella;saprotroph;unknown;out
+Kwoniella;yeast;neutral;3
+Kwoniella mangrovensis;yeast;neutral;3
+Kwoniella mangroviensis CBS 8507;yeast;neutral;3
+Kwoniella pini;yeast;neutral;3
+Kwoniella pini CBS 10737;yeast;neutral;3
+Laccaria;mycorrhizae;acidic;1
+Laccaria amethystina;mycorrhizae;acidic;1
+Laccaria bicolor;mycorrhizae;acidic;1
+Laccaria bicolor S238N-H82;mycorrhizae;acidic;1
+Lachnaceae;unknown;unknown;out
+Lachnellula;parasite;unknown;out
+Lachnellula hyalina;parasite;unknown;out
+Lactarius;mycorrhizae;acidic;1
+Lactarius trivialis;mycorrhizae;acidic;1
+Lambertella;parasite;unknown;out
+Lambertella viburni;parasite;unknown;out
+Lasiodiplodia;parasite;unknown;out
+Lasiodiplodia theobromae;parasite;unknown;out
+Lasiosphaeriaceae;saprotroph;unknown;out
+Lecanorales;lichen;acidic;1
+Lecanorineae;lichen;acidic;1
+Lecanoromycetes;lichen;acidic;1
+Lecanoromycetidae;lichen;acidic;1
+Lecideaceae;lichen;unknown;out
+Lecideales;lichen;unknown;out
+Lentinula;saprotroph;unknown;out
+Lentinula edodes;saprotroph;unknown;out
+Leohumicola;mycorrhizae;slightly acidic;2
+Leohumicola lenta;mycorrhizae;slightly acidic;2
+leotiomyceta;unknown;unknown;out
+Leotiomycetes;unknown;unknown;out
+Leotiomycetes incertae sedis;unknown;unknown;out
+Leprocaulaceae;lichen;unknown;out
+Leprocaulales;lichen;unknown;out
+Leptogium;lichen;slightly acidic;2
+Leptogium hirsutum;lichen;slightly acidic;2
+Leptosphaeria;parasite;slightly acidic;2
+Leptosphaeria biglobosa;parasite;slightly acidic;2
+Leptosphaeria biglobosa 'brassicae' group;parasite;slightly acidic;2
+Leptosphaeria biglobosa 'thlaspii' group;parasite;slightly acidic;2
+Leptosphaeria maculans;parasite;slightly acidic;2
+Leptosphaeria maculans 'lepidii' group;parasite;slightly acidic;2
+Leptosphaeria maculans species complex;parasite;slightly acidic;2
+Leptosphaeriaceae;parasite;slightly acidic;2
+Letharia;lichen;unknown;out
+Leveillula;parasite;unknown;out
+Leveillula taurica;parasite;unknown;out
+Lichenostigmatales;lichen;unknown;out
+Lichtheimia;unknown;acidic to slightly alkaline;2
+Lichtheimia ramosa;unknown;acidic to slightly alkaline;2
+Lichtheimiaceae;unknown;acidic to slightly alkaline;2
+Lindgomyces;aquatic;contaminant;out
+Lindgomyces ingoldianus;aquatic;contaminant;out
+Lindgomycetaceae;aquatic;contaminant;out
+Linnemannia;saprotroph;slightly acidic to neutral;2
+Linnemannia elongata;saprotroph;slightly acidic to neutral;2
+Lobosporangium;saprotroph;unknown;out
+Lobosporangium transversale;saprotroph;unknown;out
+Lobulomycetaceae;unknown;unknown;out
+Lobulomycetales;unknown;unknown;out
+Loramyces;saprotroph;unknown;out
+Loramyces macrosporus;saprotroph;unknown;out
+Lyophyllaceae;unknown;unknown;out
+Macroventuria;saprotroph;unknown;out
+Macroventuria anomochaeta;saprotroph;unknown;out
+Madurella;saprotroph;unknown;out
+Madurella mycetomatis;saprotroph;unknown;out
+Magnaporthaceae;parasite;unknown;out
+Magnaporthales;parasite;unknown;out
+Malassezia;yeast;slightly acidic;2
+Malassezia furfur;yeast;slightly acidic;2
+Malassezia globosa;yeast;slightly acidic;2
+Malassezia restricta;yeast;slightly acidic;2
+Malassezia restricta CBS 7877;yeast;slightly acidic;2
+Malassezia sympodialis;yeast;slightly acidic;2
+Malasseziaceae;yeast;slightly acidic;2
+Malasseziales;yeast;slightly acidic;2
+Malasseziomycetes;yeast;slightly acidic;2
+Mallocybe;mycorrhizae;unknown;out
+Martiniozyma;yeast;acidic;1
+Martiniozyma abietophila;yeast;acidic;1
+Massarineae;unknown;unknown;out
+Meira;parasite;neutral;3
+Meira miltonrushii;parasite;neutral;3
+Melampsora;parasite;unknown;out
+Melampsora larici-populina;parasite;unknown;out
+Melampsora larici-populina 98AG31;parasite;unknown;out
+Melampsoraceae;parasite;unknown;out
+Melanogastraceae;unknown;unknown;out
+Melanopsichium;parasite;unknown;out
+Melanopsichium pennsylvanicum;parasite;unknown;out
+Melanopsichium pennsylvanicum 4;parasite;unknown;out
+Meruliaceae;saprotroph;unknown;out
+Metapochonia;unknown;neutral;3
+Metapochonia suchlasporia;unknown;neutral;3
+Metarhizium;parasite;acidic;1
+Metarhizium brunneum;parasite;acidic;1
+Metarhizium rileyi;parasite;acidic;1
+Metarhizium robertsii;parasite;acidic;1
+Metarhizium robertsii ARSEF 23;parasite;acidic;1
+Metschnikowia;yeast;acidic to slightly alkaline;2
+Metschnikowia aff. pulcherrima;yeast;acidic to slightly alkaline;2
+Metschnikowia bicuspidata;yeast;acidic to slightly alkaline;2
+Metschnikowia bicuspidata var. bicuspidata;yeast;acidic to slightly alkaline;2
+Metschnikowia bicuspidata var. bicuspidata NRRL YB-4993;yeast;acidic to slightly alkaline;2
+Metschnikowiaceae;yeast;acidic to slightly alkaline;2
+Meyerozyma;yeast;unknown;out
+Meyerozyma guilliermondii;yeast;unknown;out
+Meyerozyma guilliermondii ATCC 6260;yeast;unknown;out
+Microascaceae;saprotroph;unknown;out
+Microascales;saprotroph;unknown;out
+Microbotryaceae;parasite;unknown;out
+Microbotryales;parasite;unknown;out
+Microbotryomycetes;unknown;unknown;out
+Microbotryum;parasite;unknown;out
+Microbotryum lychnidis-dioicae;parasite;unknown;out
+Microdochiaceae;unknown;unknown;out
+Microdochium;parasite;alkaline;5
+Microscypha;unknown;unknown;out
+Microsporidia;parasite;unknown;out
+Microsporidia incertae sedis;parasite;unknown;out
+Microsporum;contaminant;contaminant;out
+Microsporum canis;contaminant;contaminant;out
+Microsporum canis CBS 113480;contaminant;contaminant;out
+Microstromatales;parasite;unknown;out
+Microstromatales incertae sedis;parasite;unknown;out
+Millerozyma;yeast;unknown;out
+Millerozyma farinosa;yeast;unknown;out
+Millerozyma farinosa CBS 7064;yeast;unknown;out
+Mitosporidium;parasite;unknown;out
+Mitosporidium daphniae;parasite;unknown;out
+Mollisia;saprotroph;unknown;out
+Mollisia scopiformis;saprotroph;unknown;out
+Mollisiaceae;saprotroph;unknown;out
+Monilinia;parasite;acidic to slightly alkaline;2
+Monilinia laxa;parasite;acidic to slightly alkaline;2
+Monilinia vaccinii-corymbosi;parasite;acidic to slightly alkaline;2
+Monoblepharidales;unknown;unknown;out
+Monoblepharidomycetes;unknown;unknown;out
+Morchella;unknown;neutral;3
+Morchella importuna;saprotroph;neutral;3
+Morchella sect. Distantes;unknown;neutral;3
+Morchellaceae;unknown;neutral;3
+Mortierella;saprotroph;unknown;out
+Mortierella alpina;saprotroph;unknown;out
+Mortierella sp. 08CT03;saprotroph;unknown;out
+Mortierellaceae;saprotroph;unknown;out
+Mortierellales;saprotroph;unknown;out
+Mortierellomycetes;saprotroph;unknown;out
+Mortierellomycotina;saprotroph;unknown;out
+Mucor;unknown;slightly acidic;2
+Mucor circinelloides;unknown;slightly acidic;2
+Mucoraceae;unknown;unknown;out
+Mucorales;unknown;unknown;out
+Mucorineae;unknown;unknown;out
+Mucoromycetes;unknown;unknown;out
+Mucoromycota;unknown;unknown;out
+Mucoromycotina;unknown;unknown;out
+Mycena;saprotroph;unknown;out
+Mycena indigotica;saprotroph;unknown;out
+Mycenaceae;saprotroph;unknown;out
+Mycocaliciaceae;lichen;unknown;out
+Mycocaliciales;unknown;unknown;out
+Mycocaliciomycetidae;unknown;unknown;out
+Mycocalicium;lichen;unknown;out
+Mycocalicium subtile;lichen;unknown;out
+Mycosphaerellaceae;parasite;unknown;out
+Mycosphaerellales;parasite;unknown;out
+Mytilinidiaceae;saprotroph;unknown;out
+Mytilinidiales;saprotroph;unknown;out
+Mytilinidion;saprotroph;unknown;out
+Mytilinidion resinicola;saprotroph;unknown;out
+Myxotrichaceae;saprotroph;unknown;out
+Myxotrichum;saprotroph;unknown;out
+Myxotrichum deflexum;saprotroph;unknown;out
+Nakaseomyces;yeast;unknown;out
+Nakaseomyces/Candida clade;yeast;unknown;out
+Nannizzia;unknown;unknown;out
+Nannizzia gypsea;unknown;unknown;out
+Nannizzia gypsea CBS 118893;unknown;unknown;out
+Naumovozyma;yeast;acidic;1
+Naumovozyma dairenensis;yeast;acidic;1
+Naumovozyma dairenensis CBS 421;yeast;acidic;1
+Nectria;saprotroph;unknown;out
+Nectria cinnabarina;saprotroph;unknown;out
+Nectriaceae;unknown;unknown;out
+Nemania;saprotroph;unknown;out
+Nemania diffusa;saprotroph;unknown;out
+Neobulgaria;unknown;unknown;out
+Neobulgaria koningiana;unknown;unknown;out
+Neohortaea;unknown;acidic;1
+Neohortaea acidophila;unknown;acidic;1
+Neonectria;parasite;neutral;3
+Neonectria sp. 11MA06;parasite;neutral;3
+Neurospora;mould;alkaline;5
+Neurospora crassa;mould;alkaline;5
+Neurospora tetrasperma;mould;alkaline;5
+Neurospora tetrasperma FGSC 2508;mould;alkaline;5
+Oedogoniomyces;unknown;unknown;out
+Oedogoniomycetaceae;unknown;unknown;out
+Oidiodendron;mycorrhizae;acidic;1
+Oidiodendron sp.;mycorrhizae;acidic;1
+Olpidiaceae;parasite;unknown;out
+Olpidiales;parasite;unknown;out
+Olpidiomycetes;parasite;unknown;out
+Olpidiomycota;parasite;unknown;out
+Olpidiomycotina;parasite;unknown;out
+Olpidium;parasite;neutral;3
+Olpidium brassicae;parasite;neutral;3
+Omphalotaceae;unknown;unknown;out
+Onygenaceae;unknown;unknown;out
+Onygenales;unknown;unknown;out
+Opegrapha;lichen;unknown;out
+Opegrapha vulgata;lichen;unknown;out
+Opegraphaceae;lichen;unknown;out
+Ophiocordyceps;parasite;slightly acidic;2
+Ophiocordycipitaceae;parasite;unknown;out
+Ophiostoma;saprotroph;neutral to slightly alkaline;4
+Ophiostomataceae;saprotroph;unknown;out
+Ophiostomatales;saprotroph;unknown;out
+Orbilia;unknown;unknown;out
+Orbilia oligospora;parasite (nematodes);unknown;out
+Orbilia oligospora ATCC 24927;parasite (nematodes);unknown;out
+Orbiliaceae;unknown;unknown;out
+Orbiliales;unknown;unknown;out
+Orbiliomycetes;unknown;unknown;out
+OSLEUM clade;lichen;unknown;out
+Ostropales;lichen;unknown;out
+Ostropomycetidae;lichen;unknown;out
+Paecilomyces variotii;mould;unknown;out
+Pansporoblastina;aquatic;aquatic;out
+Paraphaeosphaeria;parasite;unknown;out
+Paraphaeosphaeria sporulosa;parasite;unknown;out
+Parastagonospora;parasite;unknown;out
+Parastagonospora nodorum;parasite;unknown;out
+Parastagonospora nodorum SN15;parasite;unknown;out
+Parmeliaceae;lichen;acidic;1
+Paxilineae;mycorrhizae;unknown;out
+Paxillaceae;mycorrhizae;unknown;out
+Paxillus;mycorrhizae;unknown;out
+Peltaster;parasite;unknown;out
+Peltaster fructicola;parasite;unknown;out
+Peltigera;lichen;neutral to slightly alkaline;4
+Peltigera dolichorrhiza;lichen;neutral to slightly alkaline;4
+Peltigera malacea;lichen;neutral to slightly alkaline;4
+Peltigera membranacea;lichen;neutral to slightly alkaline;4
+Peltigera pacifica;lichen;neutral to slightly alkaline;4
+Peltigeraceae;lichen;neutral to slightly alkaline;4
+Peltigerales;lichen;neutral to slightly alkaline;4
+Peltigerineae;lichen;neutral to slightly alkaline;4
+Penicilliopsis;saprotroph;neutral;3
+Penicilliopsis zonata;saprotroph;neutral;3
+Penicilliopsis zonata CBS 506.65;saprotroph;neutral;3
+Penicillium;saprotroph;neutral;3
+Penicillium arizonense;saprotroph;neutral;3
+Penicillium chrysogenum species complex;saprotroph;neutral;3
+Penicillium digitatum;saprotroph;neutral;3
+Penicillium expansum;saprotroph;neutral;3
+Penicillium roqueforti;saprotroph;neutral;3
+Penicillium rubens;saprotroph;neutral;3
+Penicillium rubens Wisconsin 54-1255;saprotroph;neutral;3
+Penicillium sclerotiorum;saprotroph;neutral;3
+Pertusaria;lichen;neutral;3
+Pertusaria propinqua;lichen;neutral;3
+Pertusariaceae;lichen;neutral;3
+Pertusariales;lichen;neutral;3
+Pestalotiopsis;parasite;acidic to slightly alkaline;2
+Pestalotiopsis fici;parasite;acidic to slightly alkaline;2
+Pestalotiopsis fici W106-1;parasite;acidic to slightly alkaline;2
+Peterozyma;yeast;unknown;out
+Pezizales;unknown;unknown;out
+Pezizomycetes;unknown;unknown;out
+Pezizomycotina;unknown;unknown;out
+Phaeoacremonium;parasite;slightly acidic;2
+Phaeoacremonium minimum;parasite;slightly acidic;2
+Phaeoacremonium minimum UCRPA7;parasite;slightly acidic;2
+Phaeococcomycetaceae;parasite;unknown;out
+Phaeococcomycetaceae sp. TRN456;parasite;unknown;out
+Phaeosphaeriaceae;parasite;unknown;out
+Phaffomycetaceae;yeast;unknown;out
+Phallomycetidae;yeast;unknown;out
+Phanerochaetaceae;unknown;unknown;out
+Phanerochaete;saprotroph;acidic;1
+Phanerochaete carnosa;saprotroph;acidic;1
+Phanerochaete carnosa HHB-10118-sp;saprotroph;acidic;1
+Phanerodontia;saprotroph;unknown;out
+Phanerodontia chrysosporium;saprotroph;unknown;out
+Phialocephala;mycorrhizae;acidic;1
+Phialocephala fortinii species complex;mycorrhizae;acidic;1
+Phialocephala sp. HDN13-357;mycorrhizae;acidic;1
+Phialocephala sp. SA-2014;mycorrhizae;acidic;1
+Phialocephala subalpina;mycorrhizae;acidic;1
+Phialophora;parasite;alkaline;5
+Phialophora attinorum;parasite;alkaline;5
+Phialophora cinerescens;parasite;alkaline;5
+Phialophora sp. AK47/92;parasite;alkaline;5
+Phialophora verrucosa;parasite;alkaline;5
+Phlebia;saprotroph;unknown;out
+Phlebia radiata;saprotroph;unknown;out
+Pholiota;saprotroph;slightly acidic;2
+Pholiota aurivella;saprotroph;slightly acidic;2
+Phyllopsora;lichen;unknown;out
+Phyllopsora corallina;lichen;unknown;out
+Physalacriaceae;unknown;unknown;out
+Physciaceae;lichen;unknown;out
+Pichia;yeast;alkaline;5
+Pichia membranifaciens;yeast;alkaline;5
+Pichia membranifaciens NRRL Y-2026;yeast;alkaline;5
+Pichiaceae;yeast;alkaline;5
+Pithomyces;saprotroph;acidic;1
+Pithomyces chartarum;saprotroph;acidic;1
+Plectosphaerellaceae;unknown;unknown;out
+Pleistophoridae;unknown;unknown;out
+Pleosporaceae;unknown;unknown;out
+Pleosporales;unknown;unknown;out
+Pleosporales incertae sedis;unknown;unknown;out
+Pleosporineae;unknown;unknown;out
+Pleosporomycetidae;unknown;unknown;out
+Pleuroascaceae;unknown;unknown;out
+Pleurotaceae;saprotroph;unknown;out
+Pleurotus;saprotroph;unknown;out
+Pleurotus ostreatus;saprotroph;unknown;out
+Ploettnerulaceae;unknown;unknown;out
+Pneumocystidaceae;parasite (mammals);unknown;out
+Pneumocystidales;parasite (mammals);unknown;out
+Pneumocystidomycetes;parasite (mammals);unknown;out
+Pneumocystis;parasite (mammals);unknown;out
+Pneumocystis carinii;parasite (mammals);unknown;out
+Pneumocystis carinii B80;parasite (mammals);unknown;out
+Pochonia;parasite (nematodes);unknown;out
+Pochonia chlamydosporia;parasite (nematodes);unknown;out
+Pochonia chlamydosporia 170;parasite (nematodes);unknown;out
+Podila;saprotroph;unknown;out
+Podila verticillata;saprotroph;unknown;out
+Podospora;mould;unknown;out
+Podospora anserina;mould;unknown;out
+Podospora anserina S mat+;mould;unknown;out
+Polychytriales;unknown;unknown;out
+Polychytriales incertae sedis;unknown;unknown;out
+Polychytrium;unknown;acidic?;1
+Polyporaceae;saprotroph;unknown;out
+Polyporales;saprotroph;unknown;out
+Postia;saprotroph;neutral;3
+Postia placenta;saprotroph;neutral;3
+Postia placenta MAD-698-R-SB12;saprotroph;neutral;3
+Preussia;saprotroph;unknown;out
+Preussia octomera;saprotroph;unknown;out
+Preussia/Sporomiella species complex;saprotroph;unknown;out
+Psathyrellaceae;unknown;unknown;out
+Pseudeurotiaceae;unknown;unknown;out
+Pseudevernia;lichen;acidic;1
+Pseudevernia consocians;lichen;acidic;1
+Pseudocercospora;parasite;alkaline;5
+Pseudocercospora fijiensis;parasite;alkaline;5
+Pseudocercospora fijiensis CIRAD86;parasite;alkaline;5
+Pseudocercospora mori;parasite;alkaline;5
+Pseudogymnoascus;saprotroph;slightly alkaline;4
+Pseudogymnoascus destructans;saprotroph;slightly alkaline;4
+Pseudogymnoascus pannorum;saprotroph;slightly alkaline;4
+Pseudogymnoascus roseus;saprotroph;slightly alkaline;4
+Pseudogymnoascus sp. 23342-1-I1;saprotroph;slightly alkaline;4
+Pseudogymnoascus sp. FI609;saprotroph;slightly alkaline;4
+Pseudogymnoascus verrucosus;saprotroph;slightly alkaline;4
+Pseudomicrostroma;yeast;unknown;out
+Pseudomicrostroma glucosiphilum;yeast;unknown;out
+Pseudovirgaria;parasite;unknown;out
+Pseudovirgaria hyperparasitica;parasite;unknown;out
+Pseudozyma;parasite;unknown;out
+Pseudozyma flocculosa;parasite;unknown;out
+Pseudozyma flocculosa PF-1;parasite;unknown;out
+Pseudozyma hubeiensis;parasite;unknown;out
+Pseudozyma hubeiensis SY62;parasite;unknown;out
+Psoroglaena;lichen;unknown;out
+Psoroglaena abscondita;lichen;unknown;out
+Puccinia;parasite;unknown;out
+Puccinia graminis;parasite;unknown;out
+Puccinia graminis f. sp. tritici;parasite;unknown;out
+Puccinia graminis f. sp. tritici CRL 75-36-700-3;parasite;unknown;out
+Puccinia triticina;parasite;unknown;out
+Pucciniaceae;parasite;unknown;out
+Pucciniales;parasite;unknown;out
+Pucciniomycetes;unknown;unknown;out
+Pucciniomycotina;unknown;unknown;out
+Punctularia;saprotroph;slightly acidic;2
+Punctularia strigosozonata;saprotroph;slightly acidic;2
+Punctularia strigosozonata HHB-11173 SS5;saprotroph;slightly acidic;2
+Punctulariaceae;saprotroph;unknown;out
+Purpureocillium;saprotroph;unknown;out
+Purpureocillium lilacinum;saprotroph;unknown;out
+Pyrenopeziza;saprotroph;slightly alkaline;4
+Pyrenopeziza brassicae;saprotroph;slightly alkaline;4
+Pyrenopeziza sp.;saprotroph;slightly alkaline;4
+Pyrenophora;parasite;unknown;out
+Pyrenophora teres;parasite;unknown;out
+Pyrenophora teres f. maculata;parasite;unknown;out
+Pyrenophora teres f. teres;parasite;unknown;out
+Pyrenophora tritici-repentis;parasite;unknown;out
+Pyrenophora tritici-repentis Pt-1C-BFP;parasite;unknown;out
+Pyricularia;parasite;neutral;3
+Pyricularia grisea;parasite;neutral;3
+Pyricularia oryzae;parasite;neutral;3
+Pyriculariaceae;unknown;unknown;out
+Pyronema;saprotroph;unknown;out
+Pyronema omphalodes;saprotroph;unknown;out
+Pyronemataceae;saprotroph;unknown;out
+Ramalinaceae;lichen;unknown;out
+Ramularia;parasite;unknown;out
+Ramularia collo-cygni;parasite;unknown;out
+Rasamsonia;parasite;neutral;3
+Rasamsonia emersonii;parasite;neutral;3
+Rasamsonia emersonii CBS 393.64;parasite;neutral;3
+Rhinocladiella;parasite;alkaline;5
+Rhinocladiella mackenziei;parasite;alkaline;5
+Rhinocladiella mackenziei CBS 650.93;parasite;alkaline;5
+Rhizoctonia;parasite;acidic to neutral;2
+Rhizoctonia solani;parasite;acidic to neutral;2
+Rhizophagus;mycorrhizae;slightly acidic;2
+Rhizophagus intraradices;mycorrhizae;slightly acidic;2
+Rhizophagus irregularis;mycorrhizae;slightly acidic;2
+Rhizophagus irregularis DAOM 181602=DAOM 197198;mycorrhizae;slightly acidic;2
+Rhizophagus sp. DAOM 213198;mycorrhizae;slightly acidic;2
+Rhizophydiaceae;saprotroph;unknown;out
+Rhizophydiales;unknown;unknown;out
+Rhizophydiales incertae sedis;unknown;unknown;out
+Rhizophydium;saprotroph;acidic;1
+Rhizophydium sp. JEL316;saprotroph;acidic;1
+Rhizopodaceae;saprotroph;unknown;out
+Rhizopogon;mycorrhizae;unknown;out
+Rhizopogonaceae;mycorrhizae;unknown;out
+Rhizopus;mould;neutral;3
+Rhizopus microsporus;mould;neutral;3
+Rhizopus microsporus ATCC 52813;mould;neutral;3
+Rhodotorula;yeast;slightly acidic to slightly alkaline;3
+Rhodotorula graminis;yeast;slightly acidic to slightly alkaline;3
+Rhodotorula graminis WP1;yeast;slightly acidic to slightly alkaline;3
+Rhodotorula toruloides;yeast;slightly acidic to slightly alkaline;3
+Rhynchobrunnera;unknown;unknown;out
+Rhynchobrunnera orthospora;unknown;unknown;out
+Rhynchosporium;parasite;unknown;out
+Rhynchosporium commune;parasite;unknown;out
+Rhynchosporium secalis;parasite;unknown;out
+Rhytismataceae;parasite;unknown;out
+Rhytismatales;parasite;unknown;out
+Rhytismatales sp.;parasite;unknown;out
+Russula;mycorrhizae;acidic to neutral;2
+Russulaceae;mycorrhizae;acidic to neutral;2
+Russulales;mycorrhizae;unknown;out
+Rutstroemiaceae;saprotroph;unknown;out
+Sabuloglossum;unknown;unknown;out
+Sabuloglossum arenarium;unknown;unknown;out
+Saccharomyces;yeast;acidic to neutral;2
+Saccharomyces cerevisiae;yeast;acidic to neutral;2
+Saccharomyces eubayanus;yeast;acidic to neutral;2
+Saccharomyces jurei;yeast;acidic to neutral;2
+saccharomyceta;yeast;acidic to neutral;2
+Saccharomycetaceae;yeast;acidic to neutral;2
+Saccharomycetales;yeast;acidic to neutral;2
+Saccharomycetales incertae sedis;yeast;acidic to neutral;2
+Saccharomycetes;yeast;acidic to neutral;2
+Saccharomycodaceae;yeast;acidic to neutral;2
+Saccharomycopsidaceae;yeast;acidic to neutral;2
+Saccharomycopsis;yeast;acidic to neutral;2
+Saccharomycopsis fibuligera;yeast;acidic to neutral;2
+Saccharomycopsis malanga;yeast;acidic to neutral;2
+Saccharomycotina;yeast;acidic to neutral;2
+Saccotheciaceae;unknown;unknown;out
+Saitoella;yeast;neutral;3
+Saitoella complicata;yeast;neutral;3
+Saitoella complicata NRRL Y-17804;yeast;neutral;3
+Saprochaete;parasite;acidic;1
+Saprochaete ingens;parasite;acidic;1
+Scedosporium;parasite;unknown;out
+Scedosporium apiospermum;parasite;unknown;out
+Scheffersomyces;yeast;unknown;out
+Scheffersomyces stipitis;yeast;unknown;out
+Scheffersomyces stipitis CBS 6054;yeast;unknown;out
+Schizophyllaceae;unknown;unknown;out
+Schizophyllum;unknown;slightly acidic;2
+Schizophyllum commune;unknown;slightly acidic;2
+Schizophyllum commune H4-8;unknown;slightly acidic;2
+Schizosaccharomyces;saprotroph;acidic;1
+Schizosaccharomyces japonicus;saprotroph;acidic;1
+Schizosaccharomyces japonicus yFS275;saprotroph;acidic;1
+Schizosaccharomyces pombe;saprotroph;acidic;1
+Schizosaccharomycetaceae;saprotroph;acidic;1
+Schizosaccharomycetales;saprotroph;acidic;1
+Schizosaccharomycetes;saprotroph;acidic;1
+Sclerotinia;parasite;acidic;1
+Sclerotinia borealis;parasite;acidic;1
+Sclerotinia sclerotiorum;parasite;acidic;1
+Sclerotinia sclerotiorum 1980 UF-70;parasite;acidic;1
+Sclerotiniaceae;unknown;acidic;1
+Scytalidium;parasite;acidic;1
+Scytalidium sp.;parasite;acidic;1
+Sebacinales;symbiotic;unknown;out
+Serendipita;symbiotic;endophyt;out
+Serendipita indica;symbiotic;endophyt;out
+Serendipita indica DSM 11827;symbiotic;endophyt;out
+Serendipitaceae;symbiotic;endophyt;out
+Shiraia;contaminant;contaminant;out
+Shiraia bambusicola;contaminant;contaminant;out
+Shiraiaceae;contaminant;contaminant;out
+Sodiomyces;unknown;alkaline;5
+Sodiomyces alkalinus;unknown;alkaline;5
+Sodiomyces alkalinus F11;unknown;alkaline;5
+Sordaria;saprotroph;neutral to mildly alkaline;4
+Sordaria macrospora;saprotroph;neutral to mildly alkaline;4
+Sordaria macrospora k-hell;saprotroph;neutral to mildly alkaline;4
+Sordariaceae;saprotroph;neutral to mildly alkaline;4
+Sordariales;saprotroph;neutral to mildly alkaline;4
+Sordariales incertae sedis;saprotroph;neutral to mildly alkaline;4
+sordariomyceta;unknown;neutral to mildly alkaline;4
+Sordariomycetes;unknown;neutral to mildly alkaline;4
+Sordariomycetidae;unknown;neutral to mildly alkaline;4
+Sparassidaceae;unknown;unknown;out
+Sparassis;unknown;slightly acidic to neutral;2
+Sparassis crispa;parasite;slightly acidic to neutral;2
+Speerschneidera;lichen;unknown;out
+Speerschneidera euploca;lichen;unknown;out
+Sporidiobolaceae;yeast;unknown;out
+Sporidiobolales;yeast;unknown;out
+Sporisorium;parasite;acidic;1
+Sporisorium graminicola;parasite;acidic;1
+Sporisorium reilianum;parasite;acidic;1
+Sporisorium reilianum f. sp. reilianum;parasite;acidic;1
+Sporisorium reilianum SRZ2;parasite;acidic;1
+Sporocadaceae;unknown;unknown;out
+Sporormiaceae;unknown;unknown;out
+Sporothrix;saprotroph;acidic to slightly alkaline;2
+Sporothrix schenckii;saprotroph;acidic to slightly alkaline;2
+Sporothrix schenckii 1099-18;saprotroph;acidic to slightly alkaline;2
+Stagonosporopsis;parasite;unknown;out
+Stagonosporopsis rhizophila;parasite;unknown;out
+Staurothele;lichen;alkaline;5
+Staurothele areolata;lichen;alkaline;5
+Staurothele fissa;lichen;alkaline;5
+Stemphylium;parasite;acidic to slightly alkaline;2
+Stemphylium lycopersici;parasite;acidic to slightly alkaline;2
+Stereaceae;saprotroph;unknown;out
+Stereocaulaceae;lichen;alkaline;5
+Stereocaulon;lichen;alkaline;5
+Stereum;saprotroph;unknown;out
+Stereum hirsutum;saprotroph;unknown;out
+Stereum hirsutum FP-91666 SS1;saprotroph;unknown;out
+Stropharia;contaminant;contaminant;out
+Stropharia rugosoannulata;contaminant;contaminant;out
+Strophariaceae;contaminant;contaminant;out
+Sugiyamaella;yeast;acidic;1
+Sugiyamaella lignohabitans;yeast;acidic;1
+Suillaceae;mycorrhizae;acidic;1
+Suillineae;mycorrhizae;acidic;1
+Suillus;mycorrhizae;acidic;1
+Sydowia;parasite;unknown;out
+Sydowia polyspora;parasite;unknown;out
+Sympoventuriaceae;saprotroph;unknown;out
+Talaromyces;mould;acidic;1
+Talaromyces funiculosus;mould;acidic;1
+Talaromyces pinophilus;mould;acidic;1
+Talaromyces rugulosus;mould;acidic;1
+Talaromyces sect. Islandici;mould;acidic;1
+Talaromyces sect. Talaromyces;mould;acidic;1
+Talaromyces stipitatus;mould;acidic;1
+Talaromyces stipitatus ATCC 10500;mould;acidic;1
+Taphrina;parasite;slightly acidic to neutral;2
+Taphrinaceae;parasite;unknown;out
+Taphrinales;parasite;unknown;out
+Taphrinomycetes;parasite;unknown;out
+Taphrinomycotina;unknown;unknown;out
+Taphrinomycotina incertae sedis;unknown;unknown;out
+Teratosphaeriaceae;unknown;unknown;out
+Termitomyces;symbiotic;acidic to slightly alkaline;2
+Termitomyces sp.;symbiotic;acidic to slightly alkaline;2
+Tetracladium;saprotroph;unknown;out
+Tetrapisispora;yeast;acidic?;1
+Tetrapisispora blattae;yeast;acidic?;1
+Tetrapisispora blattae CBS 6284;yeast;acidic?;1
+Thamnolia;lichen;acidic;1
+Thamnolia vermicularis;lichen;acidic;1
+Thelebolaceae;unknown;unknown;out
+Thelebolales;unknown;unknown;out
+Thelephora;mycorrhizae;acidic;1
+Thelephora aurantiotincta;mycorrhizae;acidic;1
+Thelephora ganbajun;mycorrhizae;acidic;1
+Thelephoraceae;mycorrhizae;acidic;1
+Thelephorales;mycorrhizae;acidic;1
+Thermoascaceae;unknown;unknown;out
+Thermochaetoides thermophila;unknown;unknown;out
+Thermochaetoides thermophila DSM 1495;unknown;unknown;out
+Thermothelomyces;parasite;neutral to mildly alkaline;4
+Thermothelomyces thermophilus;parasite;neutral to mildly alkaline;4
+Thermothelomyces thermophilus ATCC 42464;parasite;neutral to mildly alkaline;4
+Thermothielavioides;unknown;acidic;1
+Thermothielavioides terrestris;unknown;acidic;1
+Thermothielavioides terrestris NRRL 8126;unknown;acidic;1
+Thyridium curvatum;unknown;unknown;out
+Tilletiaria;parasite;unknown;out
+Tilletiaria anomala;parasite;unknown;out
+Tilletiaria anomala UBC 951;parasite;unknown;out
+Tilletiariaceae;parasite;unknown;out
+Tilletiopsis;saprotroph;acidic to mildly alkaline?;2
+Tilletiopsis washingtonensis;saprotroph;acidic to mildly alkaline?;2
+Togniniaceae;parasite;unknown;out
+Togniniales;unknown;unknown;out
+Trametes;saprotroph;acidic;1
+Trametes coccinea;saprotroph;acidic;1
+Trametes hirsuta;saprotroph;acidic;1
+Trametes versicolor;saprotroph;acidic;1
+Trametes versicolor FP-101664 SS1;saprotroph;acidic;1
+Trematosphaeria;parasite;alkaline?;5
+Trematosphaeria pertusa;parasite;alkaline?;5
+Trematosphaeriaceae;parasite;alkaline?;5
+Tremella;parasite;unknown;out
+Tremella mesenterica;parasite;unknown;out
+Tremella mesenterica DSM 1558;parasite;unknown;out
+Tremellaceae;parasite;unknown;out
+Tremellales;yeast;unknown;out
+Tremellomycetes;yeast;unknown;out
+Trichocomaceae;saprotroph;unknown;out
+Trichoderma;saprotroph;acidic;1
+Trichoderma asperellum;saprotroph;acidic;1
+Trichoderma atroviride;saprotroph;acidic;1
+Trichoderma citrinoviride;saprotroph;acidic;1
+Trichoderma gamsii;saprotroph;acidic;1
+Trichoderma harzianum;saprotroph;acidic;1
+Trichoderma harzianum CBS 226.95;saprotroph;acidic;1
+Tricholoma;mycorrhizae;slightly acidic;2
+Tricholomataceae;mycorrhizae;unknown;out
+Trichomeriaceae;mould;unknown;out
+Trichomonascaceae;yeast;unknown;out
+Trichophaea;saprotroph;acidic to slightly alkaline;2
+Trichophaea dougoudii;saprotroph;acidic to slightly alkaline;2
+Trichosporon;yeast;neutral;3
+Trichosporon asahii;yeast;neutral;3
+Trichosporon asahii var. asahii;yeast;neutral;3
+Trichosporon asahii var. asahii CBS 2479;yeast;neutral;3
+Trichosporonaceae;yeast;unknown;out
+Trichosporonales;yeast;unknown;out
+Tuber;mycorrhizae;neutral to mildly alkaline;4
+Tuber calosporum;mycorrhizae;neutral to mildly alkaline;4
+Tuber melanosporum;mycorrhizae;neutral to mildly alkaline;4
+Tuber melanosporum Mel28;mycorrhizae;neutral to mildly alkaline;4
+Tuberaceae;mycorrhizae;neutral to mildly alkaline;4
+Tylopilus;mycorrhizae;neutral;3
+Tylopilus sp.;mycorrhizae;neutral;3
+Umbelopsidaceae;symbiotic;unknown;out
+Umbelopsidales;symbiotic;unknown;out
+Umbelopsidomycetes;symbiotic;unknown;out
+Umbelopsis;symbiotic;pH tolerant;out
+Umbelopsis ramanniana;symbiotic;pH tolerant;out
+Uncinocarpus;saprotroph;unknown;out
+Uncinocarpus reesii;saprotroph;unknown;out
+Uncinocarpus reesii 1704;saprotroph;unknown;out
+unclassified Ceratobasidium;mycorrhizae;slightly alkaline;4
+unclassified Chaetothyriales;unknown;unknown;out
+unclassified Chrysoporthe;parasite;acidic;1
+unclassified Cladosporium;mould;slightly acidic to neutral;2
+unclassified Clavicipitaceae;parasite;unknown;out
+unclassified Clavulina;mycorrhizae;slightly acidic;2
+unclassified Diversispora;mycorrhizae;acidic?;1
+unclassified Fungi;contaminant;contaminant;out
+unclassified Geomyces;mycorrhizae;slightly acidic;2
+unclassified Helotiales;unknown;unknown;out
+unclassified Helvella;mycorrhizae;unknown;out
+unclassified Herpotrichiellaceae;unknown;unknown;out
+unclassified Ilyonectria;lichen;slightly acidic to slightly alkaline;out
+unclassified Microscypha;unknown;unknown;out
+unclassified Mortierella;saprotroph;unknown;out
+unclassified Neonectria;parasite;neutral;3
+unclassified Oedogoniomyces;unknown;unknown;out
+unclassified Oidiodendron;mycorrhizae;acidic;1
+unclassified Phaeococcomycetaceae;parasite;unknown;out
+unclassified Phialocephala (in: Leotiomycetes);mycorrhizae;acidic;1
+unclassified Phialocephala fortinii species complex;mycorrhizae;acidic;1
+unclassified Pseudogymnoascus;saprotroph;slightly acidic to alkaline;4
+unclassified Pyrenopeziza;saprotroph;slightly alkaline;4
+unclassified Rhizophagus;mycorrhizae;slightly acidic;2
+unclassified Rhizophydium;saprotroph;acidic;1
+unclassified Rhytismatales;parasite;unknown;out
+unclassified Scytalidium;parasite;acidic;1
+unclassified Termitomyces;symbiotic;acidic to slightly alkaline;2
+unclassified Tylopilus;mycorrhizae;neutral;3
+uncultured Ascomycota;unknown;unknown;out
+uncultured Aspergillus;saprotroph;unknown;out
+uncultured Basidiomycota;unknown;unknown;out
+uncultured fungus;contaminant;contaminant;out
+uncultured Glomeromycotina;mycorrhizae;unknown;out
+uncultured Herpotrichiellaceae;unknown;unknown;out
+uncultured Onygenales;unknown;unknown;out
+uncultured Rhizophydiales;unknown;unknown;out
+uncultured Thelephora;mycorrhizae;acidic;1
+Usnea;lichen;unknown;out
+Usnea mutabilis;lichen;unknown;out
+Ustilaginaceae;parasite;pH tolerant;out
+Ustilaginales;parasite;pH tolerant;out
+Ustilaginoidea;parasite;pH tolerant;out
+Ustilaginoidea virens;parasite;pH tolerant;out
+Ustilaginomycetes;parasite;pH tolerant;out
+Ustilaginomycotina;parasite;pH tolerant;out
+Ustilago;parasite;pH tolerant;out
+Ustilago bromivora;parasite;pH tolerant;out
+Ustilago hordei;parasite;pH tolerant;out
+Ustilago maydis;parasite;pH tolerant;out
+Ustilago maydis 521;parasite;pH tolerant;out
+Vanderwaltozyma;yeast;unknown;out
+Vanderwaltozyma polyspora;yeast;unknown;out
+Vanderwaltozyma polyspora DSM 70294;yeast;unknown;out
+Vanrija;yeast;unknown;out
+Vavraia;parasite (insects);unknown;out
+Vavraia culicis;parasite (insects);unknown;out
+Vavraia culicis subsp. floridensis;parasite (insects);unknown;out
+Venturia;parasite;slightly acidic to neutral;2
+Venturia effusa;parasite;slightly acidic to neutral;2
+Venturia inaequalis;parasite;slightly acidic to neutral;2
+Venturiaceae;unknown;unknown;out
+Venturiales;unknown;unknown;out
+Venustampulla;unknown;unknown;out
+Venustampulla echinocandica;unknown;unknown;out
+Verrucariaceae;lichen;alkaline;5
+Verrucariales;lichen;alkaline;5
+Verruconis;yeast;neutral to alkaline;4
+Verruconis gallopava;yeast;neutral to alkaline;4
+Verticillium;unknown;alkaline?;5
+Verticillium dahliae;parasite;alkaline?;5
+Wallemia;unknown;neutral?;3
+Wallemia ichthyophaga;unknown;neutral?;3
+Wallemia ichthyophaga EXF-994;unknown;neutral?;3
+Wallemia mellicola;unknown;neutral;3
+Wallemia mellicola CBS 633.66;unknown;neutral;3
+Wallemiaceae;unknown;unknown;out
+Wallemiales;unknown;unknown;out
+Wallemiomycetes;unknown;unknown;out
+Wallemiomycotina;unknown;unknown;out
+Westerdykella;saprotroph;slightly acidic to slightly alkaline;3
+Westerdykella ornata;saprotroph;slightly acidic to slightly alkaline;3
+Wettsteinina;saprotroph;unknown;out
+Wettsteinina dryadis;aquatic;contaminant;out
+Wickerhamomyces;yeast;slightly acidic;2
+Wickerhamomyces anomalus;yeast;slightly acidic;2
+Wickerhamomyces anomalus NRRL Y-366-8;yeast;slightly acidic;2
+Wickerhamomyces ciferrii;yeast;slightly acidic;2
+Xylaria;saprotroph;slightly acidic;2
+Xylaria hypoxylon;unknown;slightly acidic to neutral;2
+Xylariaceae;unknown;unknown;out
+Xylariales;unknown;unknown;out
+Xylariomycetidae;unknown;unknown;out
+Xylona;unknown;unknown;out
+Xylona heveae;unknown;unknown;out
+Xylona heveae TC161;unknown;unknown;out
+Xylonaceae;unknown;unknown;out
+Xylonales;unknown;unknown;out
+Xylonomycetes;yeast;unknown;out
+Yarrowia;yeast;acidic to slightly alkaline;2
+Yarrowia lipolytica;mould;acidic to slightly alkaline;2
+Zasmidium;mould;unknown;out
+Zasmidium cellare;mould;unknown;out
+Zasmidium cellare ATCC 36951;mould;unknown;out
+Zoopagomycota;parasite;unknown;out
+Zygosaccharomyces;yeast;acidic;1
+Zygosaccharomyces rouxii;yeast;acidic;1
+Zymoseptoria;parasite;unknown;out
+Zymoseptoria tritici;parasite;unknown;out
