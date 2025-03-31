@@ -1,7 +1,8 @@
+
 library(tidyverse)
 options(stringsAsFactors=FALSE)
 ### select main folder containing folders named exactly "data"
-setwd("~/Postglacial-Bioweathering-main/R_scripts/Resampling/02_resampling")
+# setwd("~/Postglacial-Bioweathering-main/R_scripts/Resampling/02_resampling")
 
 rm(list=ls())
 ### data table was exported from xlsx here csv2: sep=";", dec=","
@@ -25,7 +26,7 @@ t_specseq <- t_specseq %>%
 ### define columns that contain raw count data
 names(t_specseq)
 colstart=2
-colend=45
+colend=43
 names(t_specseq)[colstart:colend]# check
 COLUMNNAMESAREYEARS=TRUE
 
@@ -145,14 +146,14 @@ if(!COLUMNNAMESAREYEARS)
   totspec$T=factor(totspec$T, levels=names(genrare))
   totfam$T=factor(totfam$T, levels=names(genrare))
 }
-png(paste0("resampling/2023-03-08_bacteria_clean_occ3_median_resampled_totalspecies_Sampleeffort",nsampleff,"_plot.png"), width=480,height=480)
+png(paste0("2023-03-08_bacteria_clean_occ3_median_resampled_totalspecies_Sampleeffort",nsampleff,"_plot.png"), width=480,height=480)
 par(mar=c(8,4,3,1),las=2)
 with(totspec,plot(Nspecies~T, main="number of species per sample"))
 dev.off()
 
 ### save processed data
-write.csv2(totspec, paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_totalspecies_Sampleeffort",nsampleff,".csv"), row.names=FALSE)	
-write.csv2(totfam, paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_totalfamilies_Sampleeffort",nsampleff,".csv"), row.names=FALSE)	
+write.csv2(totspec, paste0("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_totalspecies_Sampleeffort",nsampleff,".csv"), row.names=FALSE)	
+write.csv2(totfam, paste0("2023-03-08_bacteria_clean_occ3_median_resampled_totalfamilies_Sampleeffort",nsampleff,".csv"), row.names=FALSE)	
 
 
 
@@ -185,7 +186,7 @@ if(!COLUMNNAMESAREYEARS)
 
 ### calculate mean values for each species/taxa
 speciesfamiliesdf_totfam=NULL
-pdf(paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated.pdf"))
+pdf(paste0("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated.pdf"))
 par(mar=c(8,4,3,1),las=2)
 for(fami in names(totfam)[3:dim(totfam)[2]])
 {
@@ -210,7 +211,7 @@ dev.off()
 str(speciesfamiliesdf_totfam)
 
 ### save processed data
-write.csv2(speciesfamiliesdf_totfam, paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated.csv"), row.names=FALSE)
+write.csv2(speciesfamiliesdf_totfam, paste0("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated.csv"), row.names=FALSE)
 
 ### post processing	
 ### reformat for pca input ... rows are samples, cols are species/taxa
@@ -235,7 +236,7 @@ colsumsnotzero=which(apply(ordidf,2,sum)>0)
 ordidf=ordidf[rowsumsnotzero,colsumsnotzero]
 
 ### export data
-write.csv2(t(ordidf), paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated_pcainput.csv"))
+write.csv2(t(ordidf), paste0("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated_pcainput.csv"))
 
 ### comparison of original and resampled data set
 ordiorigdf=t_specseq[colstart:colend]
@@ -245,7 +246,7 @@ colsumsnotzero=which(apply(ordiorigdf,2,sum)>0)
 ordiorigdf=ordiorigdf[rowsumsnotzero,colsumsnotzero]
 
 ### species count (counts >= 1)
-png(paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_speciesnumber_Sampleeffort",nsampleff,"_aggregated_comparisonplot.png"), width=480,height=480)
+png(paste0("2023-03-08_bacteria_clean_occ3_median_resampled_resampled_speciesnumber_Sampleeffort",nsampleff,"_aggregated_comparisonplot.png"), width=480,height=480)
 par(mar=c(8,4,3,1),las=2)
 barplot(apply(ordiorigdf,2,function(x)length(which(x>=1))), col="tomato", border=FALSE)
 barplot(apply(ordidf,2,function(x)length(which(x>=1))), add=TRUE, col="skyblue", border=FALSE)
@@ -256,9 +257,8 @@ dev.off()
 pca_original=prcomp(sqrt(sqrt(t(ordiorigdf))))
 pca_resampled=prcomp(sqrt(sqrt(t(ordidf))))
 
-png(paste0("output/2023-03-08_bacteria_clean_occ3_median_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated_pca_comparisonplot.png"), width=960,height=480)
+png(paste0("2023-03-08_bacteria_clean_occ3_median_resampled_specieslevel_Sampleeffort",nsampleff,"_aggregated_pca_comparisonplot.png"), width=960,height=480)
 par(mfrow=c(1,2))
 biplot(pca_original, main="original data")
 biplot(pca_resampled, main="rarefied data")
 dev.off()
-
