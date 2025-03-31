@@ -7,7 +7,7 @@ options(stringsAsFactors=FALSE)
 rm(list=ls())
 
 ### data table was exported from xlsx here csv2: sep=";", dec=","
-specseq=read.delim("plant_assigned_resampling_occ3.csv", header = TRUE, sep = ";")
+specseq=read.delim("../01_filter_taxa/plant_assigned_resampling_occ3.csv", header = TRUE, sep = ";")
 
 specseq = specseq[,-1]
 ### check data is of required format, count data as integer/double, taxa names as strings
