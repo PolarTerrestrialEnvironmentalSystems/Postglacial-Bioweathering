@@ -23,7 +23,7 @@ names(t_specseq) <- t_specseq[1,]
 t_specseq <- t_specseq[-1,]
 t_specseq$name <- row.names(t_specseq)
 t_specseq <- t_specseq %>%
-  select(name, everything())
+  dplyr::select(name, everything())
 
 ### define columns that contain raw count data
 
