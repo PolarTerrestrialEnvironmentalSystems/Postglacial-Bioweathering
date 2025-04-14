@@ -4,7 +4,7 @@ library(tidyr)
 library(ggplot2)
 library(analogue)
 
-setwd("C:/Users/ugcabuk/Desktop/test_barbara")
+setwd("~/path-to-the-input")
 
 ### kraken outputs
 apmg <- read.delim("Lama_APMG_nt2022_0.8.txt", header = FALSE)
