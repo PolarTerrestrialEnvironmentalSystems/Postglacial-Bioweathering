@@ -9,10 +9,10 @@ require(gridExtra)
 library(grid)
 library(gtable)
 
-setwd("~/Postglacial-Bioweathering-main/R_scripts/Figure_5")
+setwd("../Figure_6")
 
 ### load fungi data
-fungi_resampl <- read.delim("../02_resampling/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
+fungi_resampl <- read.delim("../02_resampling/2023-03-08_fungi_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort274_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_fungi_res <- fungi_resampl %>% 
@@ -127,6 +127,33 @@ long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"s
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mn", "C")
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mo", "C")
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..C", "C")
+
+## arsenic
+as_gg_res <- long_bact_res %>%
+  group_by(X) %>%
+  mutate(element_percent= percentage/sum(percentage)*100)
+
+as_gg_res <- as_gg_res %>%
+  group_by(assignment, X) %>%
+  summarise(tot_element_percent = (sum(element_percent)))
+as_gg_res$assignment <- factor(as_gg_res$assignment, levels = unique(as_gg_res$assignment))
+
+as_gg_res$X <- as.numeric(as_gg_res$X) / 1000 # show age as ka
+
+as_gg_res_plot <- as_gg_res[(as_gg_res$assignment == "As" ),]
+
+as_gg <- ggplot(as_gg_res_plot, aes(x = tot_element_percent, y = X, fill = assignment))+
+  coord_flip() +
+  geom_areah() + 
+  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
+  facet_grid(assignment ~ ., scales = "free", space = "fixed") + # facet by taxon
+  #scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  xlab(paste0("Relative abundance (%)")) +
+  #scale_fill_viridis_d() +
+  #theme_bw() +
+  theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
+                                                   axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
+
 
 ### delete those with pH "out" or rename
 bact_pH_clean_res <- long_bact_res[!(long_bact_res$real_5 == "out" | long_bact_res$real_5 == "" | long_bact_res$real_5 == "unknown"),]
@@ -303,6 +330,7 @@ K_Ti <- ggplot(data=loess_xrf, aes(y=y/1000, x = (K_loess.fit/Ti_loess.fit))) +
 ### Convert ggplot objects to gtables
 K_Ti_grob <- ggplotGrob(K_Ti)
 weath_gg_grob <- ggplotGrob(weath_gg)
+as_gg_grob <- ggplotGrob(as_gg)
 nutr_gg_grob <- ggplotGrob(nutr_gg)
 plant_pH_plot_grob <- ggplotGrob(plant_pH_plot)
 fungi_pH_plot_grob <- ggplotGrob(fungi_pH_plot)
@@ -310,7 +338,8 @@ bact_pH_plot_grob <- ggplotGrob(bact_pH_plot)
 
 ### Combine grobs vertically
 all_combined <- gtable_rbind(K_Ti_grob, 
-                             weath_gg_grob, 
+                             as_gg_grob,
+                             weath_gg_grob,
                              nutr_gg_grob, 
                              plant_pH_plot_grob, 
                              fungi_pH_plot_grob, 
