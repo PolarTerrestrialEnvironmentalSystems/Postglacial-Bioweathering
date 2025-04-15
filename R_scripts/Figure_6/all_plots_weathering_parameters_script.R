@@ -95,7 +95,7 @@ fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill 
 ### print the plot
 print(fungi_pH_plot)
 
-### Load bacterial data
+### load bacterial data
 bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
@@ -126,7 +126,7 @@ long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C, Mo", "C")
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"C..C", "C")
 
-## arsenic
+### plot arsenic cyclers
 as_gg_res <- long_bact_res %>%
   group_by(X) %>%
   mutate(element_percent= percentage/sum(percentage)*100)
