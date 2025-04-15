@@ -40,7 +40,7 @@ bacteria2=bacteria2[rowsumsnotzero,colsumsnotzero]
 
 time2 <- time[,-1]
 
-### interpolation of the missing tr values
+### interpolation of the missing values
 temp_int <- na_interpolation(temp_age)
 
 temp_final <- merge(temp_int, bacteria, all.y = TRUE)
@@ -51,7 +51,9 @@ temp_input <- temp_final[,-1]
 
 veg.pca <- rda(sqrt(sqrt(vegetation2)))
 
-PCAsignificance(veg.pca, axes = 8) ##first two pc-axis are important
+PCAsignificance(veg.pca, axes = 8) 
+
+### first two pc-axis are important
 
 veg.pca.site1 = as.data.frame(veg.pca$CA$u)[,1]
 veg.pca.site2 = as.data.frame(veg.pca$CA$u)[,2]
@@ -67,7 +69,7 @@ par(mar=c(4,12,2,2),las=1);barplot(c(pc2veg[1:10],rev(pc2veg)[1:10]), horiz=TRUE
 ### variation partitioning https://r.qcbs.ca/workshop10/book-en/variation-partitioning.html
 ### fungi with vegetation , temperature variation and time
 fungi_vp <- varpart(sqrt(sqrt(fungi2)), veg.pca.site, temp_input, time2)
-fungi_vp$part ###access results: Total variation (SS): 838.14, Variance: 19.492
+fungi_vp$part 
 
 ### significance of the variables
 anova.cca(rda(fungi2, veg.pca.site))
@@ -93,7 +95,7 @@ print(fungi_varpar)
 
 ### bacteria
 bact_vp <- varpart(sqrt(sqrt(bacteria2)), veg.pca.site, temp_input, time2)
-bact_vp$part ###access results: Total variation (SS): 1181.5, Variance: 27.476
+bact_vp$part 
 
 ### significance
 anova.cca(rda(bacteria2, veg.pca.site))
