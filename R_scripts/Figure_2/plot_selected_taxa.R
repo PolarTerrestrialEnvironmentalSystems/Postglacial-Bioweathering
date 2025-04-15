@@ -165,7 +165,7 @@ svg("2023-10-23_stratplot_lama_nt22_0.8_selected_all_merged_resampled_all_ordere
 plot(all_gg)
 dev.off()
 
-### plot2 (sorted)
+### plot2 (sorted) final plot for Figure 2
 all_gg <- ggplot(all_selected_gg_order, aes(x = merged_percent, y = age), fill = ecology) +
   #coord_flip() + # to create horizontal plots
   geom_areah_exaggerate(data = all_selected_gg_order, exaggerate_x = 5, fill = "lightgrey") +
