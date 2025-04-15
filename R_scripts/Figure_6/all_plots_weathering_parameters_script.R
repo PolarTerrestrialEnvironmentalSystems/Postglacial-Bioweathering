@@ -49,7 +49,6 @@ long_fungi_weath_gg <- long_fungi_weath_gg %>%
 weath_gg <- ggplot(long_fungi_weath_gg, aes(x = merged_percent, y = age), fill = assignment) +
   coord_flip() +
   geom_areah() + 
-  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) +
   facet_grid(assignment ~ ., scales = "free", space = "fixed") + 
   scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) +
   xlab(paste0("Relative abundance (%)")) +
@@ -85,7 +84,6 @@ fungi_pH_gg_res_acAl <- fungi_pH_gg_res_acAl %>%
 fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill = real_5))+
   coord_flip() +
   geom_areah() + 
-  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
   facet_grid(real_5 ~ ., scales = "free", space = "fixed") + # facet by taxon
   scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
@@ -145,7 +143,6 @@ as_gg_res_plot <- as_gg_res[(as_gg_res$assignment == "As" ),]
 as_gg <- ggplot(as_gg_res_plot, aes(x = tot_element_percent, y = X, fill = assignment))+
   coord_flip() +
   geom_areah() + 
-  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
   facet_grid(assignment ~ ., scales = "free", space = "fixed") + # facet by taxon
   #scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
@@ -184,7 +181,6 @@ bact_pH_gg_res_acAl <- bact_pH_gg_res_acAl %>%
 bact_pH_plot <- ggplot(bact_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill = real_5))+
   coord_flip() +
   geom_areah() + 
-  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
   facet_grid(real_5 ~ ., scales = "free", space = "fixed") + # facet by taxon
   scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
@@ -228,7 +224,6 @@ nutr_gg_res_plot <- nutr_gg_res[(nutr_gg_res$assignment == "C" | nutr_gg_res$ass
 nutr_gg <- ggplot(nutr_gg_res_plot, aes(x = ecol_percent, y = X, fill = assignment))+
   coord_flip() +
   geom_areah() + 
-  geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
   facet_grid(assignment ~ ., scales = "free", space = "fixed") + # facet by taxon
   scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
@@ -287,7 +282,6 @@ plant_pH_clean_res_acAl <- plant_pH_clean_res_acAl %>%
 plant_pH_plot <- ggplot(plant_pH_clean_res_acAl, aes(x = ecol_percent, y = X, fill = real_5))+
   coord_flip() +
   geom_areah() + 
-  #geom_lineh_exaggerate(exaggerate_x = 5, col = "grey70", lty = 2, linewidth = 0.6) + # exaggeration by 5
   facet_grid(real_5 ~ ., scales = "free", space = "fixed") + # facet by taxon
   scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
