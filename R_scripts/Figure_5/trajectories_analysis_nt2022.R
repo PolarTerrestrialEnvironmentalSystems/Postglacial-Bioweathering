@@ -8,9 +8,11 @@ library(venneuler)
 library(VennDiagram)
 library(imputeTS)
 
-vegetation <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
-fungi <- read.delim("../02_resampling/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
-bacteria <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+setwd("~/Figure_5/")
+
+vegetation <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3855.5_aggregated_pcainput.csv", sep=";", header=TRUE, stringsAsFactors=FALSE, dec=",")
+fungi <- read.delim("../02_resampling/2023-03-08_fungi_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort285_aggregated_pcainput.csv", sep = ";", dec = ",")
+bacteria <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort26627_aggregated_pcainput.csv", sep = ";", dec = ",")
 temperature <- read.delim("tagg_temperatures_paleo.csv", sep = ";", dec = ",")
 time <- read.delim("time_variable.txt", sep = "\t")
 
@@ -44,7 +46,7 @@ time2 <- time[,-1]
 temp_int <- na_interpolation(temp_age)
 
 temp_final <- merge(temp_int, bacteria, all.y = TRUE)
-temp_final <- temp_final[,-c(3:1421)]
+temp_final <- temp_final[,-c(3:1385)]
 
 rownames(temp_final) <- temp_final[,1]
 temp_input <- temp_final[,-1]
