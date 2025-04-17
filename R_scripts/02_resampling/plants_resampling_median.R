@@ -35,9 +35,9 @@ COLUMNNAMESAREYEARS=TRUE
 
 ### get mean and median counts
 sample_counts <- colSums(t_specseq[colstart:colend])
-### 5853.5         
+### 6132.3        
 mean_counts <- mean(sample_counts)
-### 3533
+### 3855.5
 median_counts <- median(sample_counts)
 
 ### species must have unique sample names and need to be merged with the family (for technical reasons)
@@ -66,7 +66,7 @@ specseq_final_name=paste(gsub(" ", "_", t_specseq$family_name), make.unique(t_sp
 ### resample loop for each sample/year present in the data table
 
 ### determine min. read counts for rarefaction, here automatic procedure to find the minimum within the data set
-nsampleff=3533
+nsampleff=3855.5
 ### set here the number of resamplings, standard==100
 resamplingnumber=100
 genrare=list()
