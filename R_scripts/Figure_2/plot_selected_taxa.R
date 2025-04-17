@@ -8,7 +8,7 @@ library(ggplot2)
 library(tidypaleo)
 
 ### load fungi data
-fungi_resampl <- read.delim("../02_resampling/2023-03-07_fungi_occ3_median_resampled_resampled_specieslevel_Sampleeffort275_aggregated_pcainput.csv", sep = ";", dec = ",")
+fungi_resampl <- read.delim("../02_resampling/2023-03-08_fungi_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort285_aggregated_pcainput.csv", sep = ";", dec = ",")
  
 ### convert into parameter-long form
 long.convert_fungi_res <- fungi_resampl %>%
@@ -22,7 +22,7 @@ long_fungi_res$taxa <- factor(long_fungi_res$Name, levels = unique(long_fungi_re
 
 ### split the assigned name into three columns
 long_fungi_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_fungi_res$Name, '_', 3)
-long_fungi_res$real_percent <- (long_fungi_res$percentage)/275*100
+long_fungi_res$real_percent <- (long_fungi_res$percentage)/285*100
 
 ### extract only the mentioned fungi
 long_fungi_res_gg <- long_fungi_res %>%
@@ -39,7 +39,7 @@ long_fungi_res_gg <- long_fungi_res_gg %>%
   summarise(merged_percent = (sum(real_percent)))
 
 ### load bacteria data
-bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort26627_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_bact_res <- bact_resampl %>%
@@ -53,7 +53,7 @@ long_bact_res$taxa <- factor(long_bact_res$Name, levels = unique(long_bact_res$N
 
 ### split the assigned name into three columns
 long_bact_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_bact_res$Name, '_', 3)
-long_bact_res$real_percent <- (long_bact_res$percentage)/24285*100 
+long_bact_res$real_percent <- (long_bact_res$percentage)/26627*100 
 
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"As..Sb", "As")
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"S..As", "As")
@@ -82,7 +82,7 @@ long_bact_res_gg <- long_bact_res_gg %>%
   summarise(merged_percent = (sum(real_percent)))
 
 ### load plant data
-plant_resampl <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
+plant_resampl <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3855.5_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ## convert into parameter-long form
 long.convert_plant_res <- plant_resampl %>%
@@ -94,7 +94,7 @@ long_plant_res$taxa <- factor(long_plant_res$Name, levels = unique(long_plant_re
 
 ### split the assigned name into three columns
 long_plant_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_plant_res$Name, '_', 3)
-long_plant_res$real_percent <- (long_plant_res$percentage)/3533*100 
+long_plant_res$real_percent <- (long_plant_res$percentage)/3855.5*100 
 
 ### extract only the mentioned plants
 long_plant_res_gg <- long_plant_res %>%
