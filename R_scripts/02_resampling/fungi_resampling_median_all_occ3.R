@@ -50,15 +50,15 @@ specseq_final_name=paste(gsub(" ", "_", t_specseq$family_name), make.unique(t_sp
 ### get mean and median counts
 sample_counts <- colSums(t_specseq[colstart:colend])
 
-### 
+### 999.6
 mean(sample_counts) 
-### 
+### 285
 median(sample_counts) 
 
 
 ### resample loop for each sample/year present in the data table
 ### determine min. read counts for rarefaction, here automatic procedure to find the minimum within the data set
-nsampleff=274
+nsampleff=285
 ### set here the number of resamplings, standard==100
 resamplingnumber=100
 genrare=list()
@@ -262,3 +262,4 @@ par(mfrow=c(1,2))
 biplot(pca_original, main="original data")
 biplot(pca_resampled, main="rarefied data")
 dev.off()
+
