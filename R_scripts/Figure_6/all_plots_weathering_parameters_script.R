@@ -12,7 +12,7 @@ library(gtable)
 setwd("../Figure_6")
 
 ### load fungi data
-fungi_resampl <- read.delim("../02_resampling/2023-03-08_fungi_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort274_aggregated_pcainput.csv", sep = ";", dec = ",")
+fungi_resampl <- read.delim("../02_resampling/2023-03-08_fungi_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort285_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_fungi_res <- fungi_resampl %>% 
@@ -28,7 +28,7 @@ long_fungi_res$taxa <- factor(long_fungi_res$Name, levels = unique(long_fungi_re
 ### split the assigned name into three columns
 long_fungi_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_fungi_res$Name, '_', 3)
 ### real percentage is count/resampling count*100
-long_fungi_res$real_percent <- (long_fungi_res$percentage)/275*100 
+long_fungi_res$real_percent <- (long_fungi_res$percentage)/285*100 
 
 
 ### extract only the selected fungi
@@ -50,7 +50,7 @@ weath_gg <- ggplot(long_fungi_weath_gg, aes(x = merged_percent, y = age), fill =
   coord_flip() +
   geom_areah() + 
   facet_grid(assignment ~ ., scales = "free", space = "fixed") + 
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) +
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) +
   xlab(paste0("Relative abundance (%)")) +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
@@ -85,7 +85,7 @@ fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill 
   coord_flip() +
   geom_areah() + 
   facet_grid(real_5 ~ ., scales = "free", space = "fixed") + # facet by taxon
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
   scale_fill_viridis_d() +
   #theme_bw() +
@@ -96,7 +96,7 @@ fungi_pH_plot <- ggplot(fungi_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill 
 print(fungi_pH_plot)
 
 ### load bacterial data
-bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort24285_aggregated_pcainput.csv", sep = ";", dec = ",")
+bact_resampl <- read.delim("../02_resampling/2023-03-08_bacteria_clean_occ3_median_resampled_resampled_specieslevel_Sampleeffort26627_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_bact_res <- bact_resampl %>% 
@@ -110,7 +110,7 @@ long_bact_res$taxa <- factor(long_bact_res$Name, levels = unique(long_bact_res$N
 
 ### split the assigned name into three columns
 long_bact_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_bact_res$Name, '_', 3)
-long_bact_res$real_percent <- (long_bact_res$percentage)/24285*100
+long_bact_res$real_percent <- (long_bact_res$percentage)/26627*100
 
 ### rename some of the initial assignments to narrow them down
 long_bact_res$assignment <- stringr::str_replace_all(long_bact_res$assignment,"As..Sb", "As")
@@ -144,9 +144,9 @@ as_gg <- ggplot(as_gg_res_plot, aes(x = tot_element_percent, y = X, fill = assig
   coord_flip() +
   geom_areah() + 
   facet_grid(assignment ~ ., scales = "free", space = "fixed") + # facet by taxon
-  #scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
-  #scale_fill_viridis_d() +
+  scale_fill_manual(values = "black") +
   #theme_bw() +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
@@ -182,7 +182,7 @@ bact_pH_plot <- ggplot(bact_pH_gg_res_acAl, aes(x = ecol_percent, y = X, fill = 
   coord_flip() +
   geom_areah() + 
   facet_grid(real_5 ~ ., scales = "free", space = "fixed") + # facet by taxon
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
   scale_fill_viridis_d() +
   #theme_bw() +
@@ -225,7 +225,7 @@ nutr_gg <- ggplot(nutr_gg_res_plot, aes(x = ecol_percent, y = X, fill = assignme
   coord_flip() +
   geom_areah() + 
   facet_grid(assignment ~ ., scales = "free", space = "fixed") + # facet by taxon
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
   scale_fill_viridis_d() +
   #theme_bw() +
@@ -233,7 +233,7 @@ nutr_gg <- ggplot(nutr_gg_res_plot, aes(x = ecol_percent, y = X, fill = assignme
                                                    axis.line.y = element_line(color="black", size = 0.5), legend.position = "none") 
 
 ### load plant data 
-plant_resampl <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3533_aggregated_pcainput.csv", sep = ";", dec = ",")
+plant_resampl <- read.delim("../02_resampling/2023-03-06_plants_median_resampled_resampled_specieslevel_Sampleeffort3855.5_aggregated_pcainput.csv", sep = ";", dec = ",")
 
 ### convert into parameter-long form
 long.convert_plant_res <- plant_resampl %>%
@@ -248,7 +248,7 @@ long_plant_res$taxa <- factor(long_plant_res$Name, levels = unique(long_plant_re
 
 ### split the assigned name into three columns
 long_plant_res[c('Name', 'assignment', "real_5")] <- stringr::str_split_fixed(long_plant_res$Name, '_', 3)
-long_plant_res$real_percent <- (long_plant_res$percentage)/3533*100 ###real percentage is count/resampling count*100
+long_plant_res$real_percent <- (long_plant_res$percentage)/3855.5*100 ###real percentage is count/resampling count*100
 
 ### delete those with pH "out" or rename
 plant_pH_clean_res <- long_plant_res[!(long_plant_res$real_5 == "out" | long_plant_res$real_5 == "" | long_plant_res$real_5 == "unknown"
@@ -283,7 +283,7 @@ plant_pH_plot <- ggplot(plant_pH_clean_res_acAl, aes(x = ecol_percent, y = X, fi
   coord_flip() +
   geom_areah() + 
   facet_grid(real_5 ~ ., scales = "free", space = "fixed") + # facet by taxon
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("Relative abundance (%)")) +
   scale_fill_viridis_d() +
   #theme_bw() +
@@ -314,7 +314,7 @@ K_Ti <- ggplot(data=loess_xrf, aes(y=y/1000, x = (K_loess.fit/Ti_loess.fit))) +
   geom_lineh(group = 1, colour = "black") +
   geom_smooth(group = 1, colour = "darkred", orientation = "y") +
   facet_grid(facet ~. , scales = "free", space = "fixed") +
-  scale_y_reverse(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
+  scale_y_continuous(name = "Age (ka)", breaks = rev(seq(0, max.age, by = 1))) + # reverse the y axis for age
   xlab(paste0("K/Ti")) +
   #theme_bw() +
   theme(panel.background = element_blank())+ theme(axis.line.x = element_line(color="black", size = 0.5),
